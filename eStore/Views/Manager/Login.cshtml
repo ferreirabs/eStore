@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+
+<div style="position: absolute;left: 50%;top: 45%; transform: translate(-50%,-50%); padding: 0 20px;">
+
+    <div style="width:100%;">
+        <div class="logo" style="padding-bottom: 30px;">
+            <a href="@Url.Action("LogIn","Manager")"><img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/eStorelogo2.png" class="img-responsive" alt="" /> </a>
+        </div>
+    </div>
+
+    <div >
+
+@using (Html.BeginForm())
+{
+        <form action="/login" class="mg-form" novalidate="" method="post" style="text-align:center;">
+            <fieldset style="border: none;">
+                <input type="text" autofocus="autofocus" placeholder="Nome" name="Nome" value="" class="" maxlength="144" data-message="">
+            </fieldset>
+
+
+            <fieldset style="border: none;">
+                <input type="password" autocomplete="off" name="senha" placeholder="Senha" class="" maxlength="144" data-message="">
+            </fieldset>
+
+            <div style="text-align:center;color:red;padding-top:5px;">
+                @Html.ValidationMessage("CustomError")
+            </div>
+
+            <div style="padding:20px;">
+            </div>
+
+            <input type="submit" value="Acessar sua Conta" style="display: inline-block;cursor: pointer;border: none;text-align: center;text-decoration: none;border-radius: .4rem;min-width: 100px;height: 40px;line-height: 40px;font-size: 14px;padding: 0 20px;letter-spacing: .05em;background-color: #00aafa;width: 100%;color: #fff;">
+            @Html.Hidden("returnUrl", "~/Manager/")
+
+        </form>
+}    
+    </div>
+    <div style="text-align:center">
+        <a style="text-decoration: none;color: #0099e0;font-family: sans-serif;" href="#">Esqueceu sua senha?</a>
+       
+    </div>
+    
+
+</div>

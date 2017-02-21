@@ -1,0 +1,134 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>eStore - eCommerce - Bruno - Jefferson - Juliano</title>
+    <link href="@Url.Content("~/Assets/Templates/GreTong/manager/")css/style.css" rel='stylesheet' type='text/css' />
+    <script src="@Url.Content("~/Assets/Templates/GreTong/manager/")js/index.js"> </script>
+    <link rel="icon" href="@Url.Content("~/Assets/Templates/GreTong/manager/")images/eStore_icone.png" sizes="32x32">
+</head>
+<body>
+    <div class="header_bg">
+        <div class="container">
+            <div class="header">
+                <div class="head-t">
+                    <div style="text-align:right;margin:10px;float:right">
+                        <a href="@Url.Action("Index","Home")" target="_blank"><img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/carrinho_minha_loja.png" class="img-responsive" alt="Minha Loja" /></a>
+                        <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/settings2.png" class="img-responsive" alt="Sair" /></a>
+                    </div>
+                    <div class="logo">
+                        <a href="@Url.Action("LogIn","Manager")"><img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/eStorelogo2.png" class="img-responsive" alt="" /> </a>
+                    </div>
+                   
+
+                    <div class="clearfix"> </div>
+                </div>
+                <!-- start header menu -->
+               
+                <nav id='cssmenu'>
+                    
+                    <div id="head-mobile"></div>
+                    <div class="button"></div>
+                    
+                    <ul>
+                        <li class=''>
+                            <a href='#'>Pedidos</a>
+                            <ul>
+                                <li>
+                                    <a href='#'>Gerenciar Pedidos</a>
+                                </li>
+                                <li>
+                                    <a href='#'>Relatórios de Pedidos</a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='#'>Produtos</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("GerenciarProdutos","Manager")">Gerenciar Produtos</a>
+                                </li>
+                                <li>
+                                    <a href='#'>Cadastrar Produtos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='#'>Categorias</a>
+                            <ul>
+                                <li>
+                                    <a href='#'>Gerenciar Categorias</a>
+                                    <ul>
+                                        <li><a href='#'>Sub Product</a></li>
+                                        <li><a href='#'>Sub Product</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href='#'>Cadastrar Categoria</a>
+                                    <ul>
+                                        <li><a href='#'>Sub Product</a></li>
+                                        <li><a href='#'>Sub Product</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='#'>Compradores</a>
+                            <ul>
+                                <li>
+                                    <a href='#'>Gerenciar Compradores</a>
+                                    <ul>
+                                        <li><a href='#'>Sub Product</a></li>
+                                        <li><a href='#'>Sub Product</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='#'>Frete</a>
+                            <ul>
+                                <li>
+                                    <a href='#'>Configurar Tabela</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='#'>Configurações</a>
+                            <ul>
+                                <li>
+                                    <a href='#'>Configurações Gerais</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                    
+                </nav>
+                </header>
+                
+            </div>
+        </div>
+    </div>
+    <div class="arriv">
+        <div class="container">
+            @RenderBody()
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="clearfix"> </div>
+            
+        </div>
+    </div>
+</body>
+</html>
