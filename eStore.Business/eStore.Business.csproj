@@ -69,6 +69,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frete.cs" />
+    <Compile Include="IFrete.cs" />
     <Compile Include="IProduto.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
