@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Context\eStoreContext.cs" />
+    <Compile Include="Frete.cs" />
     <Compile Include="ILojistaDAO.cs" />
     <Compile Include="IProdutoDAO.cs" />
     <Compile Include="Lojista.cs" />
