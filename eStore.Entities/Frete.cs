@@ -13,8 +13,18 @@ namespace eStore.Entities
         [Key]
         public int id { get; set; }
 
-        [Required(ErrorMessage = "O código do frete é obrigatório")]
-        public string codigo { get; set; }
+        [Required(ErrorMessage = "O nome do produto é obrigatório")]
+        [MaxLength(300, ErrorMessage = "O número máximo de caracteres permitidos é 300.")]
+        public string nome { get; set; }
+
+        [Required(ErrorMessage = "O tipo do frete é obrigatório")]
+        public string tipo { get; set; }
+
+        [Required(ErrorMessage = "A ordem de serviço é obrigatória")]
+        public string ordem { get; set; }
+
+        [Required(ErrorMessage = "O status do frete é obrigatório")]
+        public string status { get; set; }
 
     }
 }
