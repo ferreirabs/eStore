@@ -7,3 +7,12 @@ C:\Users\Multivac\Documents\Visual Studio 2013\Projects\eStore\eStore.Entities\b
 C:\Users\Multivac\Documents\Visual Studio 2013\Projects\eStore\eStore.Entities\bin\EntityFramework.SqlServer.xml
 C:\Users\Multivac\Documents\Visual Studio 2013\Projects\eStore\eStore.Entities\obj\Debug\eStore.Entities.dll
 C:\Users\Multivac\Documents\Visual Studio 2013\Projects\eStore\eStore.Entities\obj\Debug\eStore.Entities.pdb
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\bin\eStore.Entities.dll.config
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\bin\eStore.Entities.dll
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\bin\eStore.Entities.pdb
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\bin\EntityFramework.dll
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\bin\EntityFramework.SqlServer.dll
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\bin\EntityFramework.xml
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\bin\EntityFramework.SqlServer.xml
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\obj\Debug\eStore.Entities.dll
+C:\Users\jefferson.andrade\Documents\GitHub\eStore\eStore\eStore.Entities\obj\Debug\eStore.Entities.pdb

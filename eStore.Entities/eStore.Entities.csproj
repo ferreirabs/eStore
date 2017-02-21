@@ -83,8 +83,11 @@
     <Compile Include="FreteDAO.cs" />
     <Compile Include="IFreteDAO.cs" />
     <Compile Include="ILojistaDAO.cs" />
+    <Compile Include="IPedidoDAO.cs" />
     <Compile Include="IProdutoDAO.cs" />
     <Compile Include="Lojista.cs" />
+    <Compile Include="Pedido.cs" />
+    <Compile Include="PedidoDAO.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

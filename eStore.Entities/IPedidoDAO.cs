@@ -5,7 +5,7 @@ using System.Web;
 
 namespace eStore.Entities
 {
-    public class IPedidoDAO
+    public interface IPedidoDAO
     {
         int QuantidadePedidos();
     }

@@ -1,4 +1,9 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data.Linq;
+using System.Linq;
+using System;
+using System.Linq.Expressions;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
@@ -16,7 +21,7 @@ namespace eStore.Entities
         public int QuantidadePedidos()
         {
             int total = 0;
-            //total = db.Pedido.FirstOrDefault(p => p.id.Equals(1)).id;
+            total = db.Pedido.FirstOrDefault(p => p.id.Equals(1)).id;
             return total;
         }
     }
