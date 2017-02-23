@@ -1,5 +1,5 @@
-﻿using eStore.Entities;
-//using eStore.Model;
+﻿//using eStore.Entities;
+using eStore.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,14 +35,14 @@ namespace eStore.Controllers
         }
 
         [HttpPost]
-        public ActionResult LogIn(LogInLojista model, string returnUrl)
+        public ActionResult LogIn(ModelLojista model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
                 if (model.Nome.Equals("bruno") && model.Senha.Equals("teste"))
                 {
 
-                    FormsAuthentication.SetAuthCookie(model.Nome, model.Lembrar);
+                    //FormsAuthentication.SetAuthCookie(model.Nome, null);
                     System.Web.HttpContext.Current.Session["logado"] = true;
                     if (returnUrl != null)
                     {

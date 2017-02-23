@@ -166,18 +166,20 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\Manager\CompradoresController.cs" />
+    <Compile Include="Controllers\Manager\ModelCategoriasController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\SobreNosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702100202254_Initial.cs" />
-    <Compile Include="Migrations\201702100202254_Initial.Designer.cs">
-      <DependentUpon>201702100202254_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201702230117478_Initial.cs" />
+    <Compile Include="Migrations\201702230117478_Initial.Designer.cs">
+      <DependentUpon>201702230117478_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Categoria.cs" />
-    <Compile Include="Model\Lojista.cs" />
+    <Compile Include="Model\ModelCategoria.cs" />
+    <Compile Include="Model\ModelLojista.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -285,6 +287,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Manager\Login.cshtml" />
     <Content Include="Views\Manager\GerenciarProdutos.cshtml" />
+    <Content Include="Views\ModelCategorias\Create.cshtml" />
+    <Content Include="Views\ModelCategorias\Delete.cshtml" />
+    <Content Include="Views\ModelCategorias\Details.cshtml" />
+    <Content Include="Views\ModelCategorias\Edit.cshtml" />
+    <Content Include="Views\ModelCategorias\Index.cshtml" />
+    <Content Include="Views\Compradores\Create.cshtml" />
+    <Content Include="Views\Compradores\Delete.cshtml" />
+    <Content Include="Views\Compradores\Details.cshtml" />
+    <Content Include="Views\Compradores\Edit.cshtml" />
+    <Content Include="Views\Compradores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,8 +323,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702100202254_Initial.resx">
-      <DependentUpon>201702100202254_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702230117478_Initial.resx">
+      <DependentUpon>201702230117478_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -78,9 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="CategoriaDAO.cs" />
+    <Compile Include="Comprador.cs" />
+    <Compile Include="CompradorDAO.cs" />
     <Compile Include="Context\eStoreContext.cs" />
     <Compile Include="Frete.cs" />
     <Compile Include="FreteDAO.cs" />
+    <Compile Include="ICategoriaDAO.cs" />
+    <Compile Include="ICompradorDAO.cs" />
     <Compile Include="IFreteDAO.cs" />
     <Compile Include="ILojistaDAO.cs" />
     <Compile Include="IPedidoDAO.cs" />

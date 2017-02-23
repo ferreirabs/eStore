@@ -11,7 +11,9 @@ namespace eStore.Entities
     public class Categoria
     {
         [Key]
-        public int id { get; set; }
+        public int id { get; private set; }
+        
+        public string codigo { get; set; }
         public string nome { get; set; }
     }
 }

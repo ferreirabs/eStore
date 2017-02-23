@@ -12,7 +12,20 @@ namespace eStore.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
+                        codigo = c.String(),
                         nome = c.String(),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
+                "dbo.Frete",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        nome = c.String(nullable: false, maxLength: 300),
+                        tipo = c.String(nullable: false),
+                        ordem = c.String(nullable: false),
+                        status = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.id);
             
@@ -22,6 +35,19 @@ namespace eStore.Migrations
                     {
                         id = c.Int(nullable: false, identity: true),
                         nome = c.String(),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
+                "dbo.Pedido",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        subtotal = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        total = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        data_pedido = c.DateTime(nullable: false),
+                        status = c.Int(nullable: false),
+                        data_alteracao = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.id);
             
@@ -46,7 +72,9 @@ namespace eStore.Migrations
             DropForeignKey("dbo.Produto", "Categoria_id", "dbo.Categoria");
             DropIndex("dbo.Produto", new[] { "Categoria_id" });
             DropTable("dbo.Produto");
+            DropTable("dbo.Pedido");
             DropTable("dbo.Lojista");
+            DropTable("dbo.Frete");
             DropTable("dbo.Categoria");
         }
     }

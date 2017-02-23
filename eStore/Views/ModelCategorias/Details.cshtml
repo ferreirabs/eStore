@@ -1,0 +1,182 @@
+﻿@model eStore.Model.ModelCategoria
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+<!--
+<h2>Details</h2>
+
+<div>
+    <h4>ModelCategoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+    </dl>
+</div>
+-->
+
+
+
+<!DOCTYPE html>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+    }
+
+        body input {
+            padding: 2px;
+        }
+
+    #box-table-a {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 12px;
+        margin: 1% 0% 0% 1%;
+        width: 98%;
+        text-align: left;
+        border-collapse: collapse;
+    }
+
+        #box-table-a th {
+            font-size: 13px;
+            font-weight: normal;
+            padding: 8px;
+            /*background-color:#0095d4;color:#fff*/
+            background: #e4e4e4;
+            /*border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;*/
+            color: #000;
+        }
+
+        #box-table-a td {
+            padding: 8px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #fff;
+            color: #666;
+            border-top: 1px solid transparent;
+        }
+
+        #box-table-a tr:hover td {
+            background: #dbf1fb;
+            color: #666;
+        }
+
+    .container_filtros {
+        margin: 25px 0px 0px 10px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        font-weight: bold;
+        color: #666;
+        width: 400px;
+    }
+
+    .manager_migalha {
+        font-weight: bold;
+        color: #0095d4;
+        margin: 5px;
+    }
+</style>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gerenciar Categorias</title>
+</head>
+<body>
+    <br />
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        @Request.Url.LocalPath.Replace("/", " ")
+    </span>
+
+    <!--<fieldset class="container_filtros">
+
+        <legend>Filtros</legend>
+        <div>
+            <div>
+                <label>Buscar por Nome: </label>
+                <input type="text" name="filter_nome">
+            </div>
+            <br />
+            <div>
+                <label>Buscar por Id:  </label>
+                <input type="text" name="filter_id">
+            </div>
+        </div>
+        <br />
+
+    </fieldset>-->
+    <div>
+        <a href="#">
+            <div style="    display: inline-block;
+                            cursor: pointer;
+                            border: none;
+                            text-align: center;
+                            text-decoration: none;
+                            border-radius: .4rem;
+                            min-width: 100px;
+                            height: 40px;
+                            line-height: 40px;
+                            font-size: 14px;
+                            padding: 0 20px;
+                            letter-spacing: .05em;
+                            color: #fff;background-color:#009f3c;
+                            margin:10px;">
+                BUSCAR
+            </div>
+        </a>
+    </div>
+    <p>
+       @Html.ActionLink("Voltar", "Index")
+    </p>
+    <table id="box-table-a" summary="Employee Pay Sheet">
+        <thead>
+            <tr>
+                <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.codigo)</th>
+                <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.nome)</th>
+                <th scope="col" style="width:10%;">Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.id })
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+         @Html.ActionLink("Voltar", "Index")
+</p>
+</body>
+</html>
+
+
+
+
+

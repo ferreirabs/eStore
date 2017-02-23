@@ -22,8 +22,6 @@ namespace eStore.Entities
         public class LogInLojista
         {
 
-
-
             [Required]
             //[Display(Nome = "Nome")]
             public string Nome { get; set; }
@@ -34,7 +32,7 @@ namespace eStore.Entities
             public string Senha { get; set; }
 
             //[Display(Name = "Remember me?")]
-            public bool Lembrar { get; set; }
+            private bool Lembrar { get; set; }
 
         }
     

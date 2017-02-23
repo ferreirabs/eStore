@@ -7,5 +7,7 @@ namespace eStore.Entities
 {
     public class ILojistaDAO
     {
+
+
     }
 }
