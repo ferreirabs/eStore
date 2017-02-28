@@ -70,8 +70,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="Comprador.cs" />
     <Compile Include="Frete.cs" />
     <Compile Include="ICategoria.cs" />
+    <Compile Include="IComprador.cs" />
     <Compile Include="IFrete.cs" />
     <Compile Include="IProduto.cs" />
     <Compile Include="Produto.cs" />

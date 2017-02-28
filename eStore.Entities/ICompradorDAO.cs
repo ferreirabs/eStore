@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
 namespace eStore.Entities
 {
-    public class ICompradorDAO
+    public interface ICompradorDAO
     {
+        bool Create(Comprador comprador);
+        System.Collections.Generic.List<Comprador> Listar();
     }
 }
