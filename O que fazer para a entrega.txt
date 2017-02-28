@@ -1,0 +1,26 @@
+O que fazer para a entrega????
+
+Documentos:
+
+1 - Preencher o Documento "Primeiras Páginas"
+1.1 - Escrever um texto de introdução
+1.2 - Colocar uma lista dos Artefatos a serem entregues
+
+2 - Especificação de Casos de Uso
+2.1 - Ele encontrou apenas 1... temos que fazer mais 2.
+Vamos fazer os seguintes cenários:
+- Gerenciar Pedido
+- Gerenciar Produto
+- Realizar Pedido
+
+
+Software:
+
+1 - Fazer o CRUD para Gerenciar o Pedido.
+1.1 - Criar o caminho feliz para a apresentação
+
+2- Fazer o CRUD para Gerenciar o Produto.
+2.1 - Criar o caminho feliz para a apresentação
+
+3- Realizar uma compra.
+3.1 - Criar o caminho feliz para a apresentação
