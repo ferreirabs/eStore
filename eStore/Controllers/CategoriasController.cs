@@ -1,28 +1,31 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using eStore.Entities.Context;
+using System.Net;
 using eStore.Model;
+using System.Data.Entity;
 
 namespace eStore.Controllers.Manager
 {
-    public class ModelCategoriasController : Controller
+    public class CategoriasController : Controller
     {
         private eStoreContext db = new eStoreContext();
 
         private eStore.Business.Categoria categoria = new eStore.Business.Categoria();
-        
+
         // GET: ModelCategorias
         public ActionResult Index()
         {
-            return View(categoria.Listar());
+            return View(db.Categoria.ToList());
         }
 
         // GET: ModelCategorias/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -30,7 +33,8 @@ namespace eStore.Controllers.Manager
             if (modelCategoria == null)
             {
                 return HttpNotFound();
-            }
+            }*/
+            //~/Views/Guestbook/Index.cshtml
             return View("~/Views/Manager/Categorias/Create.cshtml");
         }
 

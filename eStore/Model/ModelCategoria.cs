@@ -12,6 +12,8 @@ namespace eStore.Model
     public class ModelCategoria : Categoria
     {
         public int id { get; set; }
+        public string codigo { get; set; }
+        public string nome { get; set; }
 
         public ModelCategoria() { }
 

@@ -18,7 +18,7 @@ namespace eStore.Entities
     {
         eStoreContext db = new eStoreContext();
 
-        public List<Categoria> Listar()
+        public IEnumerable<Categoria> Listar()
         {
             return db.Categoria.ToList();
         }
@@ -51,8 +51,19 @@ namespace eStore.Entities
 
                 return null;
             }
-
-
         }
+
+       /* public List<Categoria> Listar()
+        {
+            try
+            {
+                return db.Categoria.ToList();
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }*/
     }
 }

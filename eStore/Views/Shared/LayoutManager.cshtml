@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="icon" href="@Url.Content("~/Assets/Templates/GreTong/manager/")images/eStore_icone.png" sizes="32x32">
 </head>
 <body>
-    @model eStore.Model.ModelCategoria
+    
     <div class="header_bg">
         <div class="container">
             <div class="header">
@@ -64,10 +64,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href='#'>Categorias</a>
                             <ul>
                                 <li>
-                                    <a href='@Url.Action("Index", "ModelCategorias")'>Gerenciar Categorias</a>
+                                    <a href='@Url.Action("GerenciarCategorias", "Manager")'>Gerenciar Categorias</a>
                                     <ul>
-                                        <li><a href='@Url.Action("Details", "ModelCategorias")'>Listar</a></li>
-                                        <li><a href='@Url.Action("Create", "ModelCategorias")'>Cadastrar</a></li>
+                                        
+                                        <li><a href='@Url.Action("CriarCategoria", "Manager")'>Cadastrar</a></li>
                                     </ul>
                                 </li>
                             </ul>

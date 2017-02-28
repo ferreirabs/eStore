@@ -10,5 +10,7 @@ namespace eStore.Business
     {
         bool Create(Entities.Categoria categoria);
         Entities.Categoria Find(int? id);
+        IEnumerable<Entities.Categoria> Listar();
+
     }
 }

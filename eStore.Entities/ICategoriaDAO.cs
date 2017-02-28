@@ -7,7 +7,7 @@ namespace eStore.Entities
 {
     public interface ICategoriaDAO
     {
-        List<Categoria> Listar();
+        IEnumerable<Categoria> Listar();
         bool Create(Categoria categoria);
     }
 }

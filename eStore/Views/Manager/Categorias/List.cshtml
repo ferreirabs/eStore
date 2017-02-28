@@ -1,0 +1,92 @@
+﻿@model IEnumerable<eStore.Model.ModelCategoria>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+<link href="@Url.Content("~/Assets/Manager/css")/filtros.css" rel='stylesheet' type='text/css' />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gerenciar Categorias</title>
+</head>
+<body>
+    <br />
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        @Request.Url.LocalPath.Replace("/", " ")
+    </span>
+
+    <fieldset class="container_filtros">
+
+        <legend>Filtros</legend>
+        <div>
+            <div>
+                <label>Buscar por Nome: </label>
+                <input type="text" name="filter_nome">
+            </div>
+            <br />
+            <div>
+                <label>Buscar por Id:  </label>
+                <input type="text" name="filter_id">
+            </div>
+        </div>
+        <br />
+
+    </fieldset>
+    <div>
+        <a href="#">
+            <div class="botao_buscar">
+                BUSCAR
+            </div>
+        </a>
+        <a href="@Url.Action("CriarCategoria", "Manager")">
+            <div class="botao_buscar">
+                CRIAR NOVO
+            </div>
+        </a>
+    </div>
+    <table id="box-table-a" summary="Employee Pay Sheet">
+        <thead>
+            <tr>
+                <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.codigo)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.nome)</th>
+                <th scope="col" style="width:10%;">Editar</th>
+                <th scope="col" style="width:10%;">Bloquear</th>
+                <th scope="col" style="width:10%;">Deletar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Edit", new { id = item.id })">
+                            <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/editar.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Bloquear", "Block", new { id = item.id })">
+                            <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/editar.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Deletar", "Delete", new { id = item.id })">
+                            <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/editar.png" />
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

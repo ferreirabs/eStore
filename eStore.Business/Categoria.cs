@@ -40,5 +40,22 @@ namespace eStore.Business
             }
         
         }
+
+        public IEnumerable<Entities.Categoria> Listar()
+        {
+
+            try
+            {
+                CategoriaDAO c = new CategoriaDAO();
+                return c.Listar();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return null;
+            }
+
+        }
     }
 }
