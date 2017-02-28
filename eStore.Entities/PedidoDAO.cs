@@ -21,8 +21,19 @@ namespace eStore.Entities
         public int QuantidadePedidos()
         {
             int total = 0;
-            total = db.Pedido.FirstOrDefault(p => p.id.Equals(1)).id;
+            total = db.Pedido.Count<Pedido>();
             return total;
+        }
+
+        public List<Pedido> ListarPedidos()
+        {
+            return db.Pedido.ToList<Pedido>();
+        }
+
+        public List<Pedido> ListarPedidosStatus(int status)
+        {
+            var query = from p in db.Pedido where p.status == status select p;
+            return query.ToList<Pedido>();
         }
     }
 }
