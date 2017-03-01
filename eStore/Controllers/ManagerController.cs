@@ -9,6 +9,7 @@ using System.Web.Security;
 using eStore.Business;
 using System.Collections;
 using eStore.Entities.Context;
+using System.Net;
 
 namespace eStore.Controllers
 {
@@ -115,11 +116,46 @@ namespace eStore.Controllers
             }
             else
             {
-                // send error to view
                 ModelState.AddModelError("CustomError", "Campos obrigatórios inválidos!");
             }
             return View("~/Views/Manager/Categorias/Create.cshtml");
         }
+
+        // GET: ModelCategorias/Delete/5
+        public ActionResult DeleteCategoria(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ModelCategoria modelCategoria = new ModelCategoria(db.Categoria.Find(id));
+            if (modelCategoria == null)
+            {
+                return HttpNotFound();
+            }
+            return View("~/Views/Manager/Categorias/Delete.cshtml", modelCategoria);
+        }
+
+        // POST: ModelCategorias/Delete/5
+        [HttpPost, ActionName("DeleteCategoria")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteCategoriaConfirmed(int id)
+        {
+            Entities.Categoria categoria = db.Categoria.Find(id);
+            db.Categoria.Remove(categoria);
+            db.SaveChanges();
+            return RedirectToAction("GerenciarCategorias");
+        }
+
         #endregion Categorias
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

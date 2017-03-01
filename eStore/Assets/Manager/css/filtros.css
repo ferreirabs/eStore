@@ -90,3 +90,21 @@ color: #fff;
 background-color:#0095d4;
 margin:10px;
 }
+
+.botao_vermelho {
+display: inline-block;
+cursor: pointer;
+border: none;
+text-align: center;
+text-decoration: none;
+border-radius: .4rem;
+min-width: 100px;
+height: 40px;
+line-height: 40px;
+font-size: 14px;
+padding: 0 10px;
+letter-spacing: .05em;
+color: #fff;
+background-color:#ff0000;
+margin:10px;
+}

@@ -1,0 +1,64 @@
+﻿@model eStore.Model.ModelCategoria
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Deletar Categoria</title>
+</head>
+<body>
+    <br />
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        @Request.Url.LocalPath.Replace("/", " ")
+    </span>
+    <div class="form-horizontal">
+        <div class="titulo_pagina">Você têm certeza?</div>
+        <hr />
+        <table id="box-table-a" summary="Employee Pay Sheet">
+            <thead>
+                <tr>
+                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.codigo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.nome)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.nome)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div>
+                    <div style="text-align:left;float:left;">
+                        <div class="">
+                            <input type="submit" value="Deletar" class="botao_vermelho" />
+                        </div>
+                    </div>
+
+                    <div style="text-align:right;">
+                        <a href="@Url.Action("GerenciarCategorias", "Manager")">
+                            <div class="botao_azul">
+                                VOLTAR
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        
+    </div>
+</body>

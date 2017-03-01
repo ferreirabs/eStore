@@ -342,6 +342,7 @@
     <Content Include="Views\Compradores\Index.cshtml" />
     <Content Include="Views\Manager\Categorias\Create.cshtml" />
     <Content Include="Views\Manager\Categorias\List.cshtml" />
+    <Content Include="Views\Manager\Categorias\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
