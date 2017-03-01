@@ -174,9 +174,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702230117478_Initial.cs" />
-    <Compile Include="Migrations\201702230117478_Initial.Designer.cs">
-      <DependentUpon>201702230117478_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201703010202191_Initial.cs" />
+    <Compile Include="Migrations\201703010202191_Initial.Designer.cs">
+      <DependentUpon>201703010202191_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ModelCategoria.cs" />
@@ -187,6 +187,45 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Manager\css\filtros.css" />
+    <Content Include="Assets\Manager\css\style.css" />
+    <Content Include="Assets\Manager\images\1485850070_Speedometer.png" />
+    <Content Include="Assets\Manager\images\aprovado.png" />
+    <Content Include="Assets\Manager\images\aprovado_off.png" />
+    <Content Include="Assets\Manager\images\bag1.png" />
+    <Content Include="Assets\Manager\images\carrinho_minha_loja.png" />
+    <Content Include="Assets\Manager\images\editar.png" />
+    <Content Include="Assets\Manager\images\editar_off.png" />
+    <Content Include="Assets\Manager\images\eStorelogo2.png" />
+    <Content Include="Assets\Manager\images\eStore_icone.png" />
+    <Content Include="Assets\Manager\images\eStore_logo.png" />
+    <Content Include="Assets\Manager\images\eStore_logo_v3.png" />
+    <Content Include="Assets\Manager\images\facebook.png" />
+    <Content Include="Assets\Manager\images\gift.jpg" />
+    <Content Include="Assets\Manager\images\home.png" />
+    <Content Include="Assets\Manager\images\image_off.png" />
+    <Content Include="Assets\Manager\images\line.png" />
+    <Content Include="Assets\Manager\images\login.jpg" />
+    <Content Include="Assets\Manager\images\logo.png" />
+    <Content Include="Assets\Manager\images\logo_admin.png" />
+    <Content Include="Assets\Manager\images\logo_old2.png" />
+    <Content Include="Assets\Manager\images\phon.png" />
+    <Content Include="Assets\Manager\images\right_arrow.png" />
+    <Content Include="Assets\Manager\images\sair.png" />
+    <Content Include="Assets\Manager\images\search.png" />
+    <Content Include="Assets\Manager\images\settings.png" />
+    <Content Include="Assets\Manager\images\settings2.png" />
+    <Content Include="Assets\Manager\images\soc_icons.png" />
+    <Content Include="Assets\Manager\images\s_icon1.png" />
+    <Content Include="Assets\Manager\images\s_icon2.png" />
+    <Content Include="Assets\Manager\images\s_icon3.png" />
+    <Content Include="Assets\Manager\js\index.js" />
+    <Content Include="Assets\Manager\js\jquery-1.11.1.min.js" />
+    <Content Include="Assets\Manager\js\jquery-ui.min.js" />
+    <Content Include="Assets\Manager\js\jquery.etalage.min.js" />
+    <Content Include="Assets\Manager\js\jquery.jscrollpane.min.js" />
+    <Content Include="Assets\Manager\js\megamenu.js" />
+    <Content Include="Assets\Manager\js\menu_jquery.js" />
+    <Content Include="Assets\Manager\js\simpleCart.min.js" />
     <Content Include="Assets\Templates\GreTong\css\bootstrap.css" />
     <Content Include="Assets\Templates\GreTong\css\etalage.css" />
     <Content Include="Assets\Templates\GreTong\css\megamenu.css" />
@@ -329,8 +368,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702230117478_Initial.resx">
-      <DependentUpon>201702230117478_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703010202191_Initial.resx">
+      <DependentUpon>201703010202191_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

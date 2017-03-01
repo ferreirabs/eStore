@@ -103,7 +103,7 @@ namespace eStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CriarCategoria([Bind(Include = "id,codigo,nome")] ModelCategoria modelCategoria)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && modelCategoria.nome != null)
             {
 
                 Entities.Categoria c = new Entities.Categoria();
@@ -113,8 +113,12 @@ namespace eStore.Controllers
 
                 return RedirectToAction("GerenciarCategorias");
             }
-
-            return View(modelCategoria);
+            else
+            {
+                // send error to view
+                ModelState.AddModelError("CustomError", "Campos obrigatórios inválidos!");
+            }
+            return View("~/Views/Manager/Categorias/Create.cshtml");
         }
         #endregion Categorias
     }

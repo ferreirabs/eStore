@@ -23,7 +23,7 @@ namespace eStore.Model
             this.id = categoria.id;
             this.codigo = categoria.codigo;
             this.nome = categoria.nome;
-
+            this.ordem = categoria.ordem;
         }
     }
 

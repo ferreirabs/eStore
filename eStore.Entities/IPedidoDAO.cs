@@ -8,7 +8,7 @@ namespace eStore.Entities
     public interface IPedidoDAO
     {
         int QuantidadePedidos();
-        public List<Pedido> ListarPedidos();
-        public List<Pedido> ListarPedidosStatus(int status);
+        List<Pedido> ListarPedidos();
+        List<Pedido> ListarPedidosStatus(int status);
     }
 }

@@ -13,7 +13,7 @@
 <body>
     <br />
     <a href="@Url.Action("Index","Manager")">
-        <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/home.png" />
+        <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
     </a>
     <span class="manager_migalha">
         @Request.Url.LocalPath.Replace("/", " ")
@@ -24,68 +24,88 @@
         <legend>Filtros</legend>
         <div>
             <div>
-                <label>Buscar por Nome: </label>
-                <input type="text" name="filter_nome">
+                <div>
+                    <label>Nome: </label>
+                    <input type="text" name="filter_nome">
+                </div>
+                <br />
+                <div>
+                    <label>Id:  </label>
+                    <input type="text" name="filter_id">
+                </div>
             </div>
-            <br />
+            <br/>
             <div>
-                <label>Buscar por Id:  </label>
-                <input type="text" name="filter_id">
+                <a href="#">
+                    <div class="botao_verde">
+                        PESQUISAR
+                    </div>
+                </a>
             </div>
         </div>
         <br />
 
     </fieldset>
     <div>
-        <a href="#">
-            <div class="botao_buscar">
-                BUSCAR
-            </div>
-        </a>
+       
         <a href="@Url.Action("CriarCategoria", "Manager")">
-            <div class="botao_buscar">
-                CRIAR NOVO
+            <div class="botao_azul">
+                NOVA CATEGORIA
             </div>
         </a>
     </div>
     <table id="box-table-a" summary="Employee Pay Sheet">
-        <thead>
-            <tr>
-                <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.codigo)</th>
-                <th scope="col">@Html.DisplayNameFor(model => model.nome)</th>
-                <th scope="col" style="width:10%;">Editar</th>
-                <th scope="col" style="width:10%;">Bloquear</th>
-                <th scope="col" style="width:10%;">Deletar</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
+        @if (Model.Count() > 0)
+            {
+                <thead>
+                    <tr>
+                        <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.codigo)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.nome)</th>
+                        <th scope="col" style="width:10%;">Bloqueado?</th>
+                        <th scope="col" style="width:10%;">Editar</th>
+                        <th scope="col" style="width:10%;">Deletar</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nome)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Bloquear", "Block", new { id = item.id })">
+                                <img src="@Url.Content("~/Assets/manager/")images/aprovado_off.png" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Edit", new { id = item.id })">
+                                <img src="@Url.Content("~/Assets/manager/")images/editar.png" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Deletar", "Delete", new { id = item.id })">
+                                <img src="@Url.Content("~/Assets/manager/")images/lixeira.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            }
+            else
             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.codigo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nome)
-                    </td>
-                    <td>
-                        <a href="@Url.Action("Edit", "Edit", new { id = item.id })">
-                            <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/editar.png" />
-                        </a>
-                    </td>
-                    <td>
-                        <a href="@Url.Action("Bloquear", "Block", new { id = item.id })">
-                            <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/editar.png" />
-                        </a>
-                    </td>
-                    <td>
-                        <a href="@Url.Action("Deletar", "Delete", new { id = item.id })">
-                            <img src="@Url.Content("~/Assets/Templates/GreTong/manager/")images/editar.png" />
-                        </a>
+                    <td class="mensagem_aviso">
+                        <span>Ops! Nenhuma categoria encontrada. Tente criar uma nova :) </span>
+                        <br />
                     </td>
                 </tr>
             }
-        </tbody>
     </table>
 
 </body>

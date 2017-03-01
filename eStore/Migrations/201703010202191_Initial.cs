@@ -14,6 +14,17 @@ namespace eStore.Migrations
                         id = c.Int(nullable: false, identity: true),
                         codigo = c.String(),
                         nome = c.String(),
+                        ordem = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
+                "dbo.Comprador",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        codigo = c.String(),
+                        nome = c.String(),
                     })
                 .PrimaryKey(t => t.id);
             
@@ -75,6 +86,7 @@ namespace eStore.Migrations
             DropTable("dbo.Pedido");
             DropTable("dbo.Lojista");
             DropTable("dbo.Frete");
+            DropTable("dbo.Comprador");
             DropTable("dbo.Categoria");
         }
     }
