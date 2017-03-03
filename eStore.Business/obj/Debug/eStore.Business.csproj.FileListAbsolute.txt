@@ -12,8 +12,10 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\eStore.Business.dl
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\eStore.Business.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\eStore.Business.pdb
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\eStore.Entities.dll
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\eStore.ModelView.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\EntityFramework.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\eStore.Entities.pdb
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\eStore.ModelView.pdb
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\EntityFramework.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\obj\Debug\eStore.Business.csprojResolveAssemblyReference.cache
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\obj\Debug\eStore.Business.dll

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using eStore.Entities;
+using eStore.ModelView;
 
 namespace eStore.Business
 {
@@ -73,6 +74,32 @@ namespace eStore.Business
             {
                 CategoriaDAO c = new CategoriaDAO();
                 return c.Listar();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return null;
+            }
+
+        }
+
+        public ModelCategoria Listar(int filtro)
+        {
+            try
+            {
+                ModelCategoria modelCategoria = new ModelCategoria();
+                CategoriaDAO categoriaDAO = new CategoriaDAO();
+
+                var LCategorias = categoriaDAO.Listar();
+                foreach (var item in LCategorias)
+                {
+                    modelCategoria.categorias.Add(item);
+                }
+
+                modelCategoria.total_produtos = categoriaDAO.total_produtos();
+                return modelCategoria;
+            
             }
             catch (Exception)
             {

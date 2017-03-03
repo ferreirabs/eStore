@@ -127,6 +127,7 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\EntityFramework.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\EntityFramework.SqlServer.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\eStore.Business.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\eStore.Entities.dll
+C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\eStore.ModelView.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -152,6 +153,7 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\System.Web.WebPages.Razor.d
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\WebGrease.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\eStore.Business.pdb
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\eStore.Entities.pdb
+C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\eStore.ModelView.pdb
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\EntityFramework.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\EntityFramework.SqlServer.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\System.Web.Helpers.xml
@@ -176,7 +178,7 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.Owin.Security.Goo
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.csprojResolveAssemblyReference.cache
-C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.dll
-C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.pdb
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.Migrations.Initial.resources
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.csproj.GenerateResource.Cache
+C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.dll
+C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.pdb

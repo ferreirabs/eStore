@@ -11,5 +11,6 @@ namespace eStore.Entities
         bool Criar(Categoria categoria);
         bool Remover(Categoria categoria);
         bool Editar(Categoria categoria, int state);
+        int total_produtos();
     }
 }

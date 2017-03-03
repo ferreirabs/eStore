@@ -83,5 +83,18 @@ namespace eStore.Entities
                 return null;
             }
         }
+
+        public int total_produtos() {
+
+            try
+            {
+                return db.Categoria.Count();
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+        }
     }
 }

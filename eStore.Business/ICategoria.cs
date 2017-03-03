@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using eStore.Entities;
+using eStore.ModelView;
 
 namespace eStore.Business
 {
@@ -14,6 +15,7 @@ namespace eStore.Business
         bool Editar(Entities.Categoria categoria, int state);
         Entities.Categoria Find(int? id);
         IEnumerable<Entities.Categoria> Listar();
+        ModelCategoria Listar(int filtro);
 
     }
 }

@@ -55,6 +55,15 @@ color: #0095d4;
 margin: 5px;
 }
 
+.info_cabecalho_tabelas{
+
+    background-color: #ddd;
+    padding: 10px;
+    margin: 0px 10px 10px 10px;
+    width: 400px;
+
+}
+
 .botao_verde {
 display: inline-block;
 cursor: pointer;

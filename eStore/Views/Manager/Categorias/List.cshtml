@@ -1,4 +1,4 @@
-﻿@model IEnumerable<eStore.Entities.Categoria>
+﻿@model eStore.ModelView.ModelCategoria
 
 @{
     ViewBag.Title = "List";
@@ -53,13 +53,17 @@
             </div>
         </a>
     </div>
+    
+    <div class="info_cabecalho_tabelas">
+        <span>TOTAL DE CATEGORIAS:</span> @Model.total_produtos
+    </div>
     <table id="box-table-a" summary="Employee Pay Sheet">
-        @if (Model.Count() > 0)
+        @if (Model.categorias.Count() > 0)
         {
             <thead>
                 <tr>
-                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.codigo)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.nome)</th>
+                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.Codigo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
                     <th scope="col" style="width:10%;">Editar</th>
                     <th scope="col" style="width:10%;">Deletar</th>
                 </tr>
@@ -67,7 +71,7 @@
             <tbody>
 
 
-                @foreach (var item in Model)
+                @foreach (var item in Model.categorias)
                 {
                     <tr>
                         <td>

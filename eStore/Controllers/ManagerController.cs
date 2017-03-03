@@ -84,7 +84,7 @@ namespace eStore.Controllers
         #region Categorias
         public ActionResult GerenciarCategorias()
         {
-            var lcategorias = bcategoria.Listar();
+            var lcategorias = bcategoria.Listar(1);
             return View("~/Views/Manager/Categorias/List.cshtml", lcategorias);
         }
 

@@ -369,6 +369,10 @@
       <Project>{cf6dcc2c-a9b4-4d27-8346-7418ed0c2058}</Project>
       <Name>eStore.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\eStore.ModelView\eStore.ModelView.csproj">
+      <Project>{3ee5defa-e939-49d3-b0f7-a720261aa555}</Project>
+      <Name>eStore.ModelView</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703032142560_Initial.resx">

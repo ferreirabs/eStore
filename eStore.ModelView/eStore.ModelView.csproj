@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B11ED38F-0CD3-4E7F-86DB-D947F56EDD0A}</ProjectGuid>
+    <ProjectGuid>{3EE5DEFA-E939-49D3-B0F7-A720261AA555}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>eStore.Business</RootNamespace>
-    <AssemblyName>eStore.Business</AssemblyName>
+    <RootNamespace>eStore.ModelView</RootNamespace>
+    <AssemblyName>eStore.ModelView</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -39,7 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,25 +68,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Comprador.cs" />
-    <Compile Include="DicionarioErros.cs" />
-    <Compile Include="Frete.cs" />
-    <Compile Include="ICategoria.cs" />
-    <Compile Include="IComprador.cs" />
-    <Compile Include="IFrete.cs" />
-    <Compile Include="IProduto.cs" />
-    <Compile Include="Produto.cs" />
+    <Compile Include="ModelCategoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eStore.Entities\eStore.Entities.csproj">
       <Project>{cf6dcc2c-a9b4-4d27-8346-7418ed0c2058}</Project>
       <Name>eStore.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\eStore.ModelView\eStore.ModelView.csproj">
-      <Project>{3ee5defa-e939-49d3-b0f7-a720261aa555}</Project>
-      <Name>eStore.ModelView</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -103,9 +90,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53999</DevelopmentServerPort>
+          <DevelopmentServerPort>51166</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53999/</IISUrl>
+          <IISUrl>http://localhost:61865/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
