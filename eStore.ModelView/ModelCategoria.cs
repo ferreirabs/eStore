@@ -13,7 +13,7 @@ namespace eStore.ModelView
         public string Codigo { get; set; }
         public string Nome { get; set; }
 
-        public int total_produtos { get; set; }
+        public int total_categorias { get; set; }
         public List<Categoria> categorias { get; set; }
 
         public ModelCategoria() {
@@ -21,12 +21,5 @@ namespace eStore.ModelView
             categorias = new List<Categoria>();
 
         }
-
-        /*public ModelCategoria(Categoria categoria)
-        {
-            this.id = categoria.id;
-            this.codigo = categoria.codigo;
-            this.nome = categoria.nome;
-        }*/
     }
 }

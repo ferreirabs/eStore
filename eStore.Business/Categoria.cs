@@ -97,7 +97,7 @@ namespace eStore.Business
                     modelCategoria.categorias.Add(item);
                 }
 
-                modelCategoria.total_produtos = categoriaDAO.total_produtos();
+                modelCategoria.total_categorias = modelCategoria.categorias.Count();
                 return modelCategoria;
             
             }
@@ -108,6 +108,46 @@ namespace eStore.Business
                 return null;
             }
 
+        }
+
+        public ModelCategoria ListarPorFiltro(string valor, string tipo)
+        {
+            try
+            {
+                ModelCategoria modelCategoria = new ModelCategoria();
+                CategoriaDAO categoriaDAO = new CategoriaDAO();
+
+                var LCategorias = ListarPorTipo(valor, tipo, categoriaDAO);
+
+                foreach (var item in LCategorias)
+                {
+                    modelCategoria.categorias.Add(item);
+                }
+
+                modelCategoria.total_categorias = modelCategoria.categorias.Count();
+                return modelCategoria;
+
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return null;
+            }
+
+        }
+
+        private IEnumerable<Entities.Categoria> ListarPorTipo(string valor, string tipo, CategoriaDAO categoriaDAO)
+        {
+            switch (tipo)
+            {
+                case "nome":
+                    return categoriaDAO.ListarPorNome(valor);
+                case "codigo":
+                    return categoriaDAO.ListarPorCodigo(valor);
+                default:
+                    return categoriaDAO.ListarPorNome("");
+            }
         }
 
         public bool Editar(Entities.Categoria categoria, int state)

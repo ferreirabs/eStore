@@ -26,20 +26,20 @@
         <div>
             <div>
                 <div>
-                    <input type="text" name="filter_nome">
-                    <a href="#">
-                        <div class="botao_azul">
-                            PESQUISAR POR NOME
-                        </div>
-                    </a>
+                    @using (Html.BeginForm("ListarCategoriaPorFiltro", "Manager"))
+                    {
+                        <input type="text" name="filtro_valor">
+                        <input type="hidden" name="filtro_tipo" value="nome">
+                        <input type="submit" value="PESQUISAR POR NOME" class="botao_azul" />
+                    }
                 </div>
                 <div>
-                    <input type="text" name="filter_id">
-                    <a href="#">
-                        <div class="botao_azul">
-                            PESQUISAR POR CODIGO
-                        </div>
-                    </a>
+                    @using (Html.BeginForm("ListarCategoriaPorFiltro", "Manager"))
+                    {
+                        <input type="text" name="filtro_valor">
+                        <input type="hidden" name="filtro_tipo" value="codigo">
+                        <input type="submit" value="PESQUISAR POR CODIGO" class="botao_azul" />
+                    }
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
     </div>
     
     <div class="info_cabecalho_tabelas">
-        <span>TOTAL DE CATEGORIAS:</span> @Model.total_produtos
+        <span>TOTAL DE CATEGORIAS:</span> @Model.total_categorias
     </div>
     <table id="box-table-a" summary="Employee Pay Sheet">
         @if (Model.categorias.Count() > 0)

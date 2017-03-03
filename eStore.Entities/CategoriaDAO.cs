@@ -23,6 +23,16 @@ namespace eStore.Entities
             return db.Categoria.ToList();
         }
 
+        public IEnumerable<Categoria> ListarPorNome(string nome)
+        {
+            return db.Categoria.Where(c => c.nome.Contains(nome)).ToList();
+        }
+
+        public IEnumerable<Categoria> ListarPorCodigo(string codigo)
+        {
+            return db.Categoria.Where(c => c.codigo.Contains(codigo)).ToList();
+        }
+
         public bool Criar(Categoria categoria) 
         {
             try

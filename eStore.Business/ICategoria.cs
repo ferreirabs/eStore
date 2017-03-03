@@ -16,6 +16,7 @@ namespace eStore.Business
         Entities.Categoria Find(int? id);
         IEnumerable<Entities.Categoria> Listar();
         ModelCategoria Listar(int filtro);
+        ModelCategoria ListarPorFiltro(string valor, string tipo);
 
     }
 }

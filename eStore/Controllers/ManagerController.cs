@@ -82,6 +82,13 @@ namespace eStore.Controllers
 
 
         #region Categorias
+        [HttpPost]
+        public ActionResult ListarCategoriaPorFiltro(string filtro_valor, string filtro_tipo)
+        {
+            var lcategorias = bcategoria.ListarPorFiltro(filtro_valor, filtro_tipo);
+            return View("~/Views/Manager/Categorias/List.cshtml", lcategorias);
+        }
+
         public ActionResult GerenciarCategorias()
         {
             var lcategorias = bcategoria.Listar(1);
