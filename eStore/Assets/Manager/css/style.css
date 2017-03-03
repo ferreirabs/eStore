@@ -126,6 +126,12 @@ margin:1em 0 0;
     background-color:#f7fafd;
 }
 
+    .input_cadastro textarea {
+    
+        width:500px;            
+        height:100px;            
+    }
+
 .help_tip 
 {
     font-size:11px;
@@ -138,9 +144,13 @@ margin:1em 0 0;
     text-align:center;
 }
 
+
 .mensagem_erro{
     font-size: 12px;
-    background-color:#ffffcc !important;
+    color:#ff5555 !important;
+    background-color:#fff0f0 !important;
     text-align:center;
     padding:5px;
+    margin:10px;
+    border:solid 1px #ff5555;
 }

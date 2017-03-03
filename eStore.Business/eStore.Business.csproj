@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Comprador.cs" />
+    <Compile Include="DicionarioErros.cs" />
     <Compile Include="Frete.cs" />
     <Compile Include="ICategoria.cs" />
     <Compile Include="IComprador.cs" />

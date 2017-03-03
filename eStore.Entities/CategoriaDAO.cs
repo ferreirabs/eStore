@@ -23,7 +23,7 @@ namespace eStore.Entities
             return db.Categoria.ToList();
         }
 
-        public bool Create(Categoria categoria) 
+        public bool Criar(Categoria categoria) 
         {
             try
             {
@@ -40,6 +40,37 @@ namespace eStore.Entities
             
         }
 
+        public bool Remover(Categoria categoria)
+        {
+            try
+            {
+                db.Categoria.Remove(categoria);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+
+        public bool Editar(Categoria categoria, int state)
+        {
+            try
+            {
+                db.Entry(categoria).State = (EntityState)state;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public Categoria Find(int? id)
         {
             try
@@ -52,18 +83,5 @@ namespace eStore.Entities
                 return null;
             }
         }
-
-       /* public List<Categoria> Listar()
-        {
-            try
-            {
-                return db.Categoria.ToList();
-            }
-            catch (Exception)
-            {
-
-                return null;
-            }
-        }*/
     }
 }

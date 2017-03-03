@@ -14,7 +14,8 @@ namespace eStore.Migrations
                         id = c.Int(nullable: false, identity: true),
                         codigo = c.String(),
                         nome = c.String(),
-                        ordem = c.Int(nullable: false),
+                        descricao = c.String(),
+                        bloqueado = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.id);
             

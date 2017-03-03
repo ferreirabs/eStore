@@ -53,7 +53,7 @@ namespace eStore.Controllers.Manager
                 Entities.Categoria c = new Entities.Categoria();
                 c.codigo = modelCategoria.codigo;
                 c.nome = modelCategoria.nome;
-                categoria.Create(c);
+                categoria.Criar(c);
 
                 return RedirectToAction("Index");
             }

@@ -4,7 +4,7 @@ font-size: 12px;
 }
 
 body input {
-padding: 2px;
+padding: 5px;
 }
 
 #box-table-a {
@@ -43,7 +43,7 @@ color: #666;
 .container_filtros {
 margin: 25px 0px 0px 10px;
 border: 1px solid #ccc;
-padding: 20px;
+padding: 10px;
 font-weight: bold;
 color: #666;
 width: 400px;
@@ -83,13 +83,14 @@ border-radius: .4rem;
 min-width: 100px;
 height: 40px;
 line-height: 40px;
-font-size: 14px;
+font-size: 10px;
 padding: 0 10px;
 letter-spacing: .05em;
 color: #fff;
 background-color:#0095d4;
 margin:10px;
 }
+
 
 .botao_vermelho {
 display: inline-block;

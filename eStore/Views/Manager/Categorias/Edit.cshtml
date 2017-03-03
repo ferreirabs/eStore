@@ -1,14 +1,14 @@
 ﻿@model eStore.Entities.Categoria
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/LayoutManager.cshtml";
 }
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Gerenciar Categorias</title>
+    <title>Editar Categoria</title>
 </head>
 <body>
     <br />
@@ -18,32 +18,37 @@
     <span class="manager_migalha">
         @Request.Url.LocalPath.Substring(0, Request.Url.LocalPath.LastIndexOf("/")).Replace("/", " - ")
     </span>
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        <!--<div class="mensagem_erro">
-            @Html.ValidationMessage("CustomError")
-        </div>-->
+
         <div class="form-horizontal">
-            <div class="titulo_pagina">Criar Nova Categoria</div>
+            <div class="titulo_pagina">Editar Categoria - @Model.nome</div>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.id)
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="mensagem_erro">
+                    @Html.ValidationMessage("CustomError")
+                </div>
+            }
+
             <div class="input_cadastro">
                 @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
                 </div>
-                <span class="help_tip">Código da Categoria</span>
             </div>
 
             <div class="input_cadastro">
                 @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-30">
+                <div class="col-md-10">
                     @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control", @size = "50" } })
                     @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
                 </div>
-                <span class="help_tip">Nome que será exibido na loja</span>
             </div>
 
             <div class="input_cadastro">
@@ -67,7 +72,7 @@
             <div>
                 <div style="text-align:left;float:left;">
                     <div class="">
-                        <input type="submit" value="CRIAR CATEGORIA" class="botao_verde" />
+                        <input type="submit" value="SALVAR" class="botao_verde" />
                     </div>
                 </div>
 
@@ -79,7 +84,7 @@
                     </a>
                 </div>
             </div>
+
         </div>
     }
-
 </body>

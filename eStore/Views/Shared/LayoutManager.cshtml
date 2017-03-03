@@ -12,10 +12,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="@Url.Content("~/Assets/Manager/css")/filtros.css" rel='stylesheet' type='text/css' />
     <script src="@Url.Content("~/Assets/manager/")js/index.js"> </script>
     <link rel="icon" href="@Url.Content("~/Assets/manager/")images/eStore_icone.png" sizes="32x32">
-    
+
 </head>
 <body>
-    
+
     <div class="header_bg">
         <div class="container">
             <div class="header">
@@ -27,17 +27,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="logo">
                         <a href="@Url.Action("LogIn","Manager")"><img src="@Url.Content("~/Assets/manager/")images/eStorelogo2.png" class="img-responsive" alt="" /> </a>
                     </div>
-                   
+
 
                     <div class="clearfix"> </div>
                 </div>
                 <!-- start header menu -->
-               
+
                 <nav id='cssmenu'>
-                    
+
                     <div id="head-mobile"></div>
                     <div class="button"></div>
-                    
+
                     <ul>
                         <li class=''>
                             <a href='#'>Pedidos</a>
@@ -48,7 +48,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li>
                                     <a href='#'>Relatórios de Pedidos</a>
                                 </li>
-                               
+
                             </ul>
                         </li>
                         <li>
@@ -67,10 +67,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <ul>
                                 <li>
                                     <a href='@Url.Action("GerenciarCategorias", "Manager")'>Gerenciar Categorias</a>
-                                    <ul>
-                                        
-                                        <li><a href='@Url.Action("CriarCategoria", "Manager")'>Cadastrar</a></li>
-                                    </ul>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("GerenciarCategorias", "Manager")'>Listar Categorias</a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("CriarCategoria", "Manager")'>Criar Nova Categoria</a>
                                 </li>
                             </ul>
                         </li>
@@ -102,14 +104,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </li>
                             </ul>
                         </li>
-                        
-                        
-                        
+
+
+
                     </ul>
-                    
+
                 </nav>
                 </header>
-                
+
             </div>
         </div>
     </div>
@@ -123,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="footer">
         <div class="container">
             <div class="clearfix"> </div>
-            
+
         </div>
     </div>
 </body>

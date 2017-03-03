@@ -11,10 +11,12 @@ namespace eStore.Entities
     public class Categoria
     {
         [Key]
-        public int id { get; private set; }
-        
+        public int id { get; set; }
+
         public string codigo { get; set; }
         public string nome { get; set; }
-        public int ordem { get; set; }
+        /*public int ordem { get; set; }*/
+        public string descricao { get; set; }
+        public bool bloqueado { get; set; }
     }
 }

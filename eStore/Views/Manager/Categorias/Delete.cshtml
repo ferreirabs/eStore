@@ -1,4 +1,4 @@
-﻿@model eStore.Model.ModelCategoria
+﻿@model eStore.Entities.Categoria
 
 @{
     ViewBag.Title = "Delete";
@@ -16,7 +16,7 @@
         <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
     </a>
     <span class="manager_migalha">
-        @Request.Url.LocalPath.Replace("/", " ")
+        @Request.Url.LocalPath.Substring(0, Request.Url.LocalPath.LastIndexOf("/")).Replace("/", " - ")
     </span>
     <div class="form-horizontal">
         <div class="titulo_pagina">Você têm certeza?</div>
@@ -40,25 +40,25 @@
             </tbody>
         </table>
 
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                <div>
-                    <div style="text-align:left;float:left;">
-                        <div class="">
-                            <input type="submit" value="Deletar" class="botao_vermelho" />
-                        </div>
-                    </div>
-
-                    <div style="text-align:right;">
-                        <a href="@Url.Action("GerenciarCategorias", "Manager")">
-                            <div class="botao_azul">
-                                VOLTAR
-                            </div>
-                        </a>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <div style="text-align:left;float:left;">
+                    <div class="">
+                        <input type="submit" value="Deletar" class="botao_vermelho" />
                     </div>
                 </div>
-            }
-        
+
+                <div style="text-align:right;">
+                    <a href="@Url.Action("GerenciarCategorias", "Manager")">
+                        <div class="botao_azul">
+                            VOLTAR
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+
     </div>
 </body>

@@ -8,7 +8,10 @@ namespace eStore.Business
 {
     public interface ICategoria
     {
-        bool Create(Entities.Categoria categoria);
+        bool Criar(Entities.Categoria categoria);
+        bool Remover(Entities.Categoria categoria);
+        bool Remover(int id);
+        bool Editar(Entities.Categoria categoria, int state);
         Entities.Categoria Find(int? id);
         IEnumerable<Entities.Categoria> Listar();
 

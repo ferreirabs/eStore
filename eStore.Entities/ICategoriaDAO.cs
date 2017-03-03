@@ -8,6 +8,8 @@ namespace eStore.Entities
     public interface ICategoriaDAO
     {
         IEnumerable<Categoria> Listar();
-        bool Create(Categoria categoria);
+        bool Criar(Categoria categoria);
+        bool Remover(Categoria categoria);
+        bool Editar(Categoria categoria, int state);
     }
 }
