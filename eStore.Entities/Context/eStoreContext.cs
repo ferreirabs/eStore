@@ -29,6 +29,12 @@ namespace eStore.Entities.Context
 
         }
 
+        //public System.Data.Entity.DbSet<eStore.ModelView.ModelProduto> ModelProdutoes { get; set; }
+
+        //public System.Data.Entity.DbSet<eStore.ModelView.ModelProduto> ModelProdutoes { get; set; }
+
+        //public System.Data.Entity.DbSet<eStore.ModelView.ModelCategoria> ModelCategorias { get; set; }
+
         //public System.Data.Entity.DbSet<eStore.ModelView.ModelCategoria> ModelCategorias { get; set; }
     }
 }

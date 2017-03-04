@@ -71,6 +71,8 @@ namespace eStore.Migrations
                         codigo = c.String(nullable: false),
                         nome = c.String(nullable: false, maxLength: 300),
                         preco = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        ordem = c.Int(nullable: false),
+                        bloqueado = c.Boolean(nullable: false),
                         Categoria_id = c.Int(),
                     })
                 .PrimaryKey(t => t.id)

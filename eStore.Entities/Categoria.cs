@@ -15,8 +15,8 @@ namespace eStore.Entities
 
         public string codigo { get; set; }
         public string nome { get; set; }
-        /*public int ordem { get; set; }*/
         public string descricao { get; set; }
         public bool bloqueado { get; set; }
+
     }
 }

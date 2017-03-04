@@ -21,9 +21,14 @@ namespace eStore.Entities
         [MaxLength(300, ErrorMessage = "O número máximo de caracteres permitidos é 300.")]
         public string nome { get; set; }
 
-        [RegularExpression(@"^\d+.\d{0,2}$", ErrorMessage = "O preço do produto é obrigatório")]
-        [Range(0, 10, ErrorMessage = "O valor máximo deve ser possuir até 10 digitos")]
-        public Decimal preco { get; set; }
+        //[RegularExpression(@"^\d+.\d{0,2}$", ErrorMessage = "O preço do produto é obrigatório")]
+        [Required(ErrorMessage = "O preço do produto é obrigatório")]
+        [Range(0, 10000000, ErrorMessage = "O valor máximo deve ser possuir até 10 digitos")]
+        public decimal preco { get; set; }
+
+        public int ordem { get; set; }
+        
+        public bool bloqueado { get; set; }
 
         public virtual Categoria Categoria { get; set; }
     }

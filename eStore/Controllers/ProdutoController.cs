@@ -8,17 +8,6 @@ namespace eStore.Controllers
 {
     public class ProdutoController : Controller
     {
-        public ActionResult Categoria()
-        {
-            return View("Categoria");
-        }
-
-
-        public ActionResult ListarProdutos()
-        {
-
-            return View("ListarProdutos");
-
-        }
+        
     }
 }

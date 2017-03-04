@@ -1,0 +1,114 @@
+﻿@model eStore.ModelView.ModelProduto
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gerenciar Produtos</title>
+</head>
+<body>
+    <br />
+
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        Gerenciar Produtos
+    </span>
+
+    <div class="container_busca_titulo">
+        Busca
+    </div>
+
+
+    <div class="container_busca">
+        <div>
+            <div>
+                @using (Html.BeginForm("ListarProdutoPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="nome">
+                    <input type="submit" value="PESQUISAR POR NOME" class="botao_pesquisar_azul" />
+                }
+            </div>
+            <div>
+                @using (Html.BeginForm("ListarProdutoPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="codigo">
+                    <input type="submit" value="PESQUISAR POR CÓDIGO" class="botao_pesquisar_azul" />
+                }
+            </div>
+        </div>
+        <div>
+
+            <a href="@Url.Action("CriarProduto", "Manager")">
+                <div class="botao_verde">
+                    NOVA PRODUTO
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="info_cabecalho_tabelas">
+
+        Página @Model.lista_produtos.FirstItemOnPage de @Model.lista_produtos.PageCount | Total de @Model.total_produtos PRODUTOS
+        @Html.PagedListPager(Model.lista_produtos, page => Url.Action("GerenciarProdutos",
+                                 new { page, pageSize = Model.lista_produtos.PageSize }))
+    </div>
+    <table id="box-table-a" summary="Employee Pay Sheet">
+        @if (Model.lista_produtos.Count() > 0)
+        {
+
+
+            <thead>
+                <tr>
+                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.Codigo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th scope="col" style="width:10%;">Editar</th>
+                    <th scope="col" style="width:10%;">Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var item in Model.lista_produtos)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nome)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("EditProduto", "Manager", new { id = item.id })">
+                                <img src="@Url.Content("~/Assets/manager/")images/editar.png" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("DeleteProduto", "Manager", new { id = item.id })">
+                                <img src="@Url.Content("~/Assets/manager/")images/lixeira.png" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+        else
+        {
+            <tr>
+                <td class="mensagem_aviso">
+                    <span>Ops! Nenhuma produto encontrado. Tente criar um novo :) </span>
+                    <br />
+                </td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>

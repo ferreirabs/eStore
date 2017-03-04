@@ -1,4 +1,4 @@
-﻿@model eStore.Entities.Categoria
+﻿@model eStore.ModelView.ModelCategoria
 
 @{
     ViewBag.Title = "Delete";
@@ -24,17 +24,17 @@
         <table id="box-table-a" summary="Employee Pay Sheet">
             <thead>
                 <tr>
-                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.codigo)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.nome)</th>
+                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.Codigo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        @Html.DisplayFor(model => model.codigo)
+                        @Html.DisplayFor(model => model.Codigo)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.nome)
+                        @Html.DisplayFor(model => model.Nome)
                     </td>
                 </tr>
             </tbody>

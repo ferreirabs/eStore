@@ -1,5 +1,6 @@
 ﻿using eStore.Entities;
 using eStore.Model;
+using eStore.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,9 @@ namespace eStore.Controllers
         private bool logado;
         private eStore.Business.Produto bproduto = new eStore.Business.Produto();
         private eStore.Business.Categoria bcategoria = new eStore.Business.Categoria();
-        private eStoreContext db = new eStoreContext();
+        //private eStoreContext db = new eStoreContext();
 
-        #region produtos
+        #region login
         // GET: Manager
         public ActionResult Index()
         {
@@ -66,16 +67,105 @@ namespace eStore.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("CustomError", bproduto.TotalProdutos().ToString());
+                    //ModelState.AddModelError("CustomError", bproduto.TotalProdutos().ToString());
                 }
             }
 
             return View(model);
         }
 
-        public ActionResult GerenciarProdutos()
+        #endregion login
+
+        #region produtos
+        [HttpPost]
+        public ActionResult ListarProdutoPorFiltro(string filtro_valor, string filtro_tipo)
         {
-            return View("GerenciarProdutos");
+            var lprodutos = bproduto.ListarPorFiltro(filtro_valor, filtro_tipo);
+            return View("~/Views/Manager/Produtos/List.cshtml", lprodutos);
+        }
+
+        [HttpGet]
+        public ActionResult GerenciarProdutos(int page = 1, int pageSize = 10)
+        {
+            var lprodutos = bproduto.Listar(page, pageSize);
+            return View("~/Views/Manager/Produtos/List.cshtml", lprodutos);
+        }
+
+        public ActionResult CriarProduto()
+        {
+            return View("~/Views/Manager/Produtos/Create.cshtml");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CriarProduto([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado")] ModelView.ModelProduto produto)
+        {
+            if (ModelState.IsValid)
+            {
+                bproduto.Criar(produto);
+                return RedirectToAction("GerenciarProdutos");
+            }
+            else
+            {
+                ModelState.AddModelError("CustomError", bproduto.msgErro.Get("CAMPOS_OBRIGATORIOS"));
+            }
+            return View("~/Views/Manager/Produtos/Create.cshtml");
+        }
+
+        public ActionResult DeleteProduto(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var produto = bproduto.Find(id);
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View("~/Views/Manager/Produtos/Delete.cshtml", produto);
+        }
+
+        [HttpPost, ActionName("DeleteProduto")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteProdutoConfirmed(int id)
+        {
+            if (!bproduto.Remover(id))
+            {
+                ModelState.AddModelError("CustomError", bproduto.msgErro.Get("EXECUTAR_ACAO"));
+            }
+
+            return RedirectToAction("GerenciarProdutos");
+        }
+
+        public ActionResult EditProduto(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ModelView.ModelProduto produto = bproduto.Find(id);
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View("~/Views/Manager/Produtos/Edit.cshtml", produto);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditProduto([Bind(Include = "id,codigo,nome,descricao,bloqueado")] ModelView.ModelProduto model_produto)
+        {
+            if (ModelState.IsValid)
+            {
+                if (!bproduto.Editar(model_produto))
+                {
+                    ModelState.AddModelError("CustomError", bproduto.msgErro.Get("EXECUTAR_ACAO"));
+                    return View("~/Views/Manager/Produtos/Edit.cshtml", model_produto);
+                }
+            }
+            return RedirectToAction("GerenciarProdutos");
+
         }
 
         #endregion produtos
@@ -97,25 +187,16 @@ namespace eStore.Controllers
             return View("~/Views/Manager/Categorias/List.cshtml", lcategorias);
         }
 
-        /*public ActionResult GerenciarCategorias()
-        {
-            var lcategorias = bcategoria.Listar(1);
-            return View("~/Views/Manager/Categorias/List.cshtml", lcategorias);
-        }*/
-
         public ActionResult CriarCategoria()
         {
             return View("~/Views/Manager/Categorias/Create.cshtml");
         }
 
-        // POST: ModelCategorias/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CriarCategoria([Bind(Include = "id,codigo,nome,descricao,bloqueado")] Entities.Categoria categoria)
+        public ActionResult CriarCategoria([Bind(Include = "id,codigo,nome,descricao,bloqueado")] ModelView.ModelCategoria categoria)
         {
-            if (ModelState.IsValid && categoria.nome != null)
+            if (ModelState.IsValid)
             {
                 bcategoria.Criar(categoria);
                 return RedirectToAction("GerenciarCategorias");
@@ -127,7 +208,6 @@ namespace eStore.Controllers
             return View("~/Views/Manager/Categorias/Create.cshtml");
         }
 
-        // GET: ModelCategorias/Delete/5
         public ActionResult DeleteCategoria(int? id)
         {
             if (id == null)
@@ -142,7 +222,6 @@ namespace eStore.Controllers
             return View("~/Views/Manager/Categorias/Delete.cshtml", categoria);
         }
 
-        // POST: ModelCategorias/Delete/5
         [HttpPost, ActionName("DeleteCategoria")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteCategoriaConfirmed(int id)
@@ -155,14 +234,13 @@ namespace eStore.Controllers
             return RedirectToAction("GerenciarCategorias");
         }
 
-        // GET: GerenciarCategorias/EditCategoria/5
         public ActionResult EditCategoria(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var categoria = bcategoria.Find(id);
+            ModelView.ModelCategoria categoria = bcategoria.Find(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -170,19 +248,16 @@ namespace eStore.Controllers
             return View("~/Views/Manager/Categorias/Edit.cshtml", categoria);
         }
 
-        // POST: GerenciarCategorias/EditCategoria/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditCategoria([Bind(Include = "id,codigo,nome,descricao,bloqueado")] Entities.Categoria categoria)
+        public ActionResult EditCategoria([Bind(Include = "id,codigo,nome,descricao,bloqueado")] ModelView.ModelCategoria model_categoria)
         {
             if (ModelState.IsValid)
             {
-                if (!bcategoria.Editar(categoria, (int)EntityState.Modified))
+                if (!bcategoria.Editar(model_categoria))
                 {
                     ModelState.AddModelError("CustomError", bcategoria.msgErro.Get("EXECUTAR_ACAO"));
-                    return View("~/Views/Manager/Categorias/Edit.cshtml", categoria);
+                    return View("~/Views/Manager/Categorias/Edit.cshtml", model_categoria);
                 }
             }
             return RedirectToAction("GerenciarCategorias");

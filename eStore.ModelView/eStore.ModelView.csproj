@@ -74,11 +74,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\PagedList.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModelCategoria.cs" />
+    <Compile Include="ModelProduto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

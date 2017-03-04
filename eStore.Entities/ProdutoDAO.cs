@@ -18,15 +18,93 @@ namespace eStore.Entities
     {
         eStoreContext db = new eStoreContext();
 
-        public List<Produto> Listar()
+        public IEnumerable<Produto> Listar()
         {
             return db.Produto.ToList();
         }
 
-        public int NumeroProdutos()
+        public IEnumerable<Produto> ListarPorNome(string nome)
         {
-            return db.Produto.FirstOrDefault(item => item.codigo == "100").id;
-            //return db.Produto.Count();
+            return db.Produto.Where(c => c.nome.Contains(nome)).ToList();
+        }
+
+        public IEnumerable<Produto> ListarPorCodigo(string codigo)
+        {
+            return db.Produto.Where(c => c.codigo.Contains(codigo)).ToList();
+        }
+
+        public bool Criar(Produto produto)
+        {
+            try
+            {
+                db.Produto.Add(produto);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+        }
+
+        public bool Remover(Produto produto)
+        {
+            try
+            {
+                db.Produto.Remove(produto);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+        }
+
+        public bool Editar(Produto produto, int state)
+        {
+            try
+            {
+                db.Entry(produto).State = (EntityState)state;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Salvar(Produto produto)
+        {
+            try
+            {
+                db.Entry(produto).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        public Produto Find(int? id)
+        {
+            try
+            {
+                return db.Produto.FirstOrDefault(c => c.id == id);
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
         }
     }
 }

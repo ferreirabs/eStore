@@ -56,10 +56,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href='#'>Produtos</a>
                             <ul>
                                 <li>
-                                    <a href="@Url.Action("GerenciarProdutos","Manager")">Gerenciar Produtos</a>
+                                    <a href='@Url.Action("GerenciarProdutos", "Manager")'>Gerenciar Produtos</a>
                                 </li>
                                 <li>
-                                    <a href='#'>Cadastrar Produtos</a>
+                                    <a href='@Url.Action("GerenciarProdutos", "Manager")'>Listar Produtos</a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("CriarProduto", "Manager")'>Criar Novo Produto</a>
                                 </li>
                             </ul>
                         </li>

@@ -41,7 +41,7 @@
                 {
                     <input type="text" name="filtro_valor">
                     <input type="hidden" name="filtro_tipo" value="codigo">
-                    <input type="submit" value="PESQUISAR POR CODIGO" class="botao_pesquisar_azul" />
+                    <input type="submit" value="PESQUISAR POR CÓDIGO" class="botao_pesquisar_azul" />
                 }
             </div>
         </div>
@@ -56,12 +56,12 @@
      </div>
     <div class="info_cabecalho_tabelas">
         
-        Página @Model.categoriasPaged.FirstItemOnPage de @Model.categoriasPaged.PageCount | Total de @Model.total_categorias CATEGORIAS
-        @Html.PagedListPager(Model.categoriasPaged, page => Url.Action("GerenciarCategorias",
-                        new { page, pageSize = Model.categoriasPaged.PageSize }))
+        Página @Model.lista_categorias.FirstItemOnPage de @Model.lista_categorias.PageCount | Total de @Model.total_categorias CATEGORIAS
+        @Html.PagedListPager(Model.lista_categorias, page => Url.Action("GerenciarCategorias",
+                        new { page, pageSize = Model.lista_categorias.PageSize }))
     </div>
     <table id="box-table-a" summary="Employee Pay Sheet">
-        @if (Model.categoriasPaged.Count() > 0)
+        @if (Model.lista_categorias.Count() > 0)
         {
             
             
@@ -76,7 +76,7 @@
             <tbody>
 
 
-                @foreach (var item in Model.categoriasPaged)
+                @foreach (var item in Model.lista_categorias)
                 {
                     <tr>
                         <td>

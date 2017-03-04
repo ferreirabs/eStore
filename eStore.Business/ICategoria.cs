@@ -13,7 +13,8 @@ namespace eStore.Business
         bool Remover(Entities.Categoria categoria);
         bool Remover(int id);
         bool Editar(Entities.Categoria categoria, int state);
-        Entities.Categoria Find(int? id);
+        bool Editar(ModelView.ModelCategoria categoria);
+        ModelCategoria Find(int? id);
         IEnumerable<Entities.Categoria> Listar();
         ModelCategoria Listar(int page, int pageSize);
         ModelCategoria ListarPorFiltro(string valor, string tipo);

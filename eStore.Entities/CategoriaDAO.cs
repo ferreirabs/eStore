@@ -46,8 +46,7 @@ namespace eStore.Entities
 
                 return false;
             }
-            
-            
+           
         }
 
         public bool Remover(Categoria categoria)
@@ -63,7 +62,6 @@ namespace eStore.Entities
 
                 return false;
             }
-
 
         }
 
@@ -81,11 +79,26 @@ namespace eStore.Entities
             }
         }
 
+        public bool Salvar(Categoria categoria)
+        {
+            try
+            {
+                db.Entry(categoria).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
         public Categoria Find(int? id)
         {
             try
             {
-                return db.Categoria.Find(id);
+                return db.Categoria.FirstOrDefault(c => c.id == id);
             }
             catch (Exception)
             {
@@ -93,18 +106,6 @@ namespace eStore.Entities
                 return null;
             }
         }
-
-        public int total_produtos() {
-
-            try
-            {
-                return db.Categoria.Count();
-            }
-            catch (Exception)
-            {
-
-                return 0;
-            }
-        }
+       
     }
 }

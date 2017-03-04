@@ -126,11 +126,15 @@ margin:1em 0 0;
     background-color:#f7fafd;
 }
 
-    .input_cadastro textarea {
+.input_cadastro textarea {
     
-        width:500px;            
-        height:100px;            
-    }
+    width:500px;            
+    height:100px;            
+}
+
+.input_cadastro .label_name {
+    margin: 5px 0px;
+}
 
 .help_tip 
 {

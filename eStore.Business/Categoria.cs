@@ -5,6 +5,7 @@ using System.Web;
 using eStore.Entities;
 using eStore.ModelView;
 using PagedList;
+using AutoMapper;
 
 namespace eStore.Business
 {
@@ -13,7 +14,9 @@ namespace eStore.Business
 
         public DicionarioErros msgErro =  new DicionarioErros();
 
-        public Categoria() { }
+        public Categoria() {
+            AutoMapperConfig.ConfigMappings();
+        }
 
         public bool Criar(Entities.Categoria categoria)
         {
@@ -29,6 +32,27 @@ namespace eStore.Business
                 return false;
             }
             
+        }
+
+        public bool Criar(ModelView.ModelCategoria categoria)
+        {
+            try
+            {
+                CategoriaDAO c = new CategoriaDAO();
+                var _categoria = Mapper.Map<Entities.Categoria>(categoria);
+                
+                if (_categoria.nome.Equals(null))
+                    return false;
+                
+                return c.Criar(_categoria);
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return false;
+            }
+
         }
 
         public bool Remover(Entities.Categoria categoria)
@@ -91,15 +115,10 @@ namespace eStore.Business
             {
                 ModelCategoria modelCategoria = new ModelCategoria();
                 CategoriaDAO categoriaDAO = new CategoriaDAO();
-
                 var LCategorias = categoriaDAO.Listar();
-                foreach (var item in LCategorias)
-                {
-                    modelCategoria.categorias.Add(item);
-                }
-
-                modelCategoria.categoriasPaged = new PagedList<Entities.Categoria>(modelCategoria.categorias, page, pageSize);
-                modelCategoria.total_categorias = modelCategoria.categorias.Count();
+                modelCategoria.lista_categorias = new PagedList<Entities.Categoria>(LCategorias, page, pageSize);
+                modelCategoria.total_categorias = modelCategoria.lista_categorias.Count();
+                
                 return modelCategoria;
             
             }
@@ -120,14 +139,9 @@ namespace eStore.Business
                 CategoriaDAO categoriaDAO = new CategoriaDAO();
 
                 var LCategorias = ListarPorTipo(valor, tipo, categoriaDAO);
-
-                foreach (var item in LCategorias)
-                {
-                    modelCategoria.categorias.Add(item);
-                }
-
-                modelCategoria.categoriasPaged = new PagedList<Entities.Categoria>(modelCategoria.categorias, 1, 10);
-                modelCategoria.total_categorias = modelCategoria.categorias.Count();
+                modelCategoria.lista_categorias = new PagedList<Entities.Categoria>(LCategorias, 1, 10);
+                modelCategoria.total_categorias = modelCategoria.lista_categorias.Count();
+                
                 return modelCategoria;
 
             }
@@ -169,14 +183,39 @@ namespace eStore.Business
             }
         
         }
-        
 
-        public Entities.Categoria Find(int? id) {
+        public bool Editar(ModelView.ModelCategoria categoria)
+        {
 
             try
             {
                 CategoriaDAO c = new CategoriaDAO();
-                return c.Find(id);
+                var _categoria = Mapper.Map<Entities.Categoria>(categoria);
+                return c.Salvar(_categoria);
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return false;
+            }
+
+        }
+        
+        public ModelCategoria Find(int? id)
+        {
+            try
+            {
+                CategoriaDAO categoriaDAO = new CategoriaDAO();
+                var categoria = categoriaDAO.Find(id);
+                List<Entities.Categoria> lcategoria = new List<Entities.Categoria>();
+                lcategoria.Add(categoria);
+
+                ModelCategoria modelCategoria = new ModelCategoria(lcategoria.FirstOrDefault());
+                modelCategoria.lista_categorias = new PagedList<Entities.Categoria>(lcategoria, 1, 10);
+                modelCategoria.total_categorias = modelCategoria.lista_categorias.Count();
+                return modelCategoria;
+            
             }
             catch (Exception)
             {
@@ -184,9 +223,8 @@ namespace eStore.Business
                 throw new NotImplementedException();
                 return null;
             }
-        
-        }
 
+        }
         
     }
 }
