@@ -15,7 +15,7 @@ namespace eStore.Business
         bool Editar(Entities.Categoria categoria, int state);
         Entities.Categoria Find(int? id);
         IEnumerable<Entities.Categoria> Listar();
-        ModelCategoria Listar(int filtro);
+        ModelCategoria Listar(int page, int pageSize);
         ModelCategoria ListarPorFiltro(string valor, string tipo);
 
     }

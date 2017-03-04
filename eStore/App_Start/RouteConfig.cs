@@ -18,6 +18,17 @@ namespace eStore
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                        "Search", 
+                        "Search/{query}/{startIndex}",
+                       new
+                       {
+                           controller = "Home",
+                           action = "Search",
+                           startIndex = 0,
+                           pageSize = 2
+                       });
         }
     }
 }

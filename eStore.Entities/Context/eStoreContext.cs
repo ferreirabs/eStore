@@ -28,5 +28,7 @@ namespace eStore.Entities.Context
             dbModelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
         }
+
+        //public System.Data.Entity.DbSet<eStore.ModelView.ModelCategoria> ModelCategorias { get; set; }
     }
 }

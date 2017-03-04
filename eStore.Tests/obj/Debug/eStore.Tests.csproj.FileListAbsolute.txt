@@ -147,6 +147,7 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.ModelView.dll
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\PagedList.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.pdb
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\System.Web.Helpers.xml
@@ -165,5 +166,6 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.ModelView.pdb
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\PagedList.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.pdb

@@ -16,7 +16,7 @@
         <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
     </a>
     <span class="manager_migalha">
-        @Request.Url.LocalPath.Substring(0, Request.Url.LocalPath.LastIndexOf("/")).Replace("/", " - ")
+        Editar Categoria
     </span>
 
     @using (Html.BeginForm())
@@ -24,7 +24,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <div class="titulo_pagina">Editar Categoria - @Model.nome</div>
+            <div class="titulo_pagina">@Model.nome</div>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.id)

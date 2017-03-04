@@ -1,4 +1,5 @@
 ﻿@model eStore.ModelView.ModelCategoria
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "List";
@@ -17,49 +18,53 @@
         <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
     </a>
     <span class="manager_migalha">
-        @Request.Url.LocalPath.Substring(0, Request.Url.LocalPath.LastIndexOf("/")).Replace("/", " - ")
+        Gerenciar Categorias
     </span>
 
-    <fieldset class="container_filtros">
-
-        <legend>Filtros</legend>
+    <div class="container_busca_titulo">
+        Busca
+    </div>
+   
+   
+    <div class="container_busca">
         <div>
             <div>
-                <div>
-                    @using (Html.BeginForm("ListarCategoriaPorFiltro", "Manager"))
-                    {
-                        <input type="text" name="filtro_valor">
-                        <input type="hidden" name="filtro_tipo" value="nome">
-                        <input type="submit" value="PESQUISAR POR NOME" class="botao_azul" />
-                    }
-                </div>
-                <div>
-                    @using (Html.BeginForm("ListarCategoriaPorFiltro", "Manager"))
-                    {
-                        <input type="text" name="filtro_valor">
-                        <input type="hidden" name="filtro_tipo" value="codigo">
-                        <input type="submit" value="PESQUISAR POR CODIGO" class="botao_azul" />
-                    }
-                </div>
+                @using (Html.BeginForm("ListarCategoriaPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="nome">
+                    <input type="submit" value="PESQUISAR POR NOME" class="botao_pesquisar_azul" />
+                }
+            </div>
+            <div>
+                @using (Html.BeginForm("ListarCategoriaPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="codigo">
+                    <input type="submit" value="PESQUISAR POR CODIGO" class="botao_pesquisar_azul" />
+                }
             </div>
         </div>
+        <div>
 
-    </fieldset>
-    <div>
-
-        <a href="@Url.Action("CriarCategoria", "Manager")">
-            <div class="botao_verde">
-                NOVA CATEGORIA
-            </div>
-        </a>
-    </div>
-    
+            <a href="@Url.Action("CriarCategoria", "Manager")">
+                <div class="botao_verde">
+                    NOVA CATEGORIA
+                </div>
+            </a>
+        </div>
+     </div>
     <div class="info_cabecalho_tabelas">
-        <span>TOTAL DE CATEGORIAS:</span> @Model.total_categorias
+        
+        Página @Model.categoriasPaged.FirstItemOnPage de @Model.categoriasPaged.PageCount | Total de @Model.total_categorias CATEGORIAS
+        @Html.PagedListPager(Model.categoriasPaged, page => Url.Action("GerenciarCategorias",
+                        new { page, pageSize = Model.categoriasPaged.PageSize }))
     </div>
     <table id="box-table-a" summary="Employee Pay Sheet">
-        @if (Model.categorias.Count() > 0)
+        @if (Model.categoriasPaged.Count() > 0)
         {
+            
+            
             <thead>
                 <tr>
                     <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.Codigo)</th>
@@ -71,7 +76,7 @@
             <tbody>
 
 
-                @foreach (var item in Model.categorias)
+                @foreach (var item in Model.categoriasPaged)
                 {
                     <tr>
                         <td>

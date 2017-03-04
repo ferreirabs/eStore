@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using eStore.Entities;
+using PagedList;
 
 namespace eStore.ModelView
 {
@@ -15,6 +16,7 @@ namespace eStore.ModelView
 
         public int total_categorias { get; set; }
         public List<Categoria> categorias { get; set; }
+        public PagedList<Categoria> categoriasPaged { get; set; }
 
         public ModelCategoria() {
 

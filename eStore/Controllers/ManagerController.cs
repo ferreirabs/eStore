@@ -11,6 +11,7 @@ using System.Collections;
 using eStore.Entities.Context;
 using System.Net;
 using System.Data.Entity;
+using PagedList;
 
 namespace eStore.Controllers
 {
@@ -89,11 +90,18 @@ namespace eStore.Controllers
             return View("~/Views/Manager/Categorias/List.cshtml", lcategorias);
         }
 
-        public ActionResult GerenciarCategorias()
+        [HttpGet]
+        public ActionResult GerenciarCategorias(int page = 1, int pageSize = 10)
+        {
+            var lcategorias = bcategoria.Listar(page, pageSize);
+            return View("~/Views/Manager/Categorias/List.cshtml", lcategorias);
+        }
+
+        /*public ActionResult GerenciarCategorias()
         {
             var lcategorias = bcategoria.Listar(1);
             return View("~/Views/Manager/Categorias/List.cshtml", lcategorias);
-        }
+        }*/
 
         public ActionResult CriarCategoria()
         {

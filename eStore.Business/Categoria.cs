@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using eStore.Entities;
 using eStore.ModelView;
+using PagedList;
 
 namespace eStore.Business
 {
@@ -84,7 +85,7 @@ namespace eStore.Business
 
         }
 
-        public ModelCategoria Listar(int filtro)
+        public ModelCategoria Listar(int page, int pageSize)
         {
             try
             {
@@ -97,6 +98,7 @@ namespace eStore.Business
                     modelCategoria.categorias.Add(item);
                 }
 
+                modelCategoria.categoriasPaged = new PagedList<Entities.Categoria>(modelCategoria.categorias, page, pageSize);
                 modelCategoria.total_categorias = modelCategoria.categorias.Count();
                 return modelCategoria;
             
@@ -124,6 +126,7 @@ namespace eStore.Business
                     modelCategoria.categorias.Add(item);
                 }
 
+                modelCategoria.categoriasPaged = new PagedList<Entities.Categoria>(modelCategoria.categorias, 1, 10);
                 modelCategoria.total_categorias = modelCategoria.categorias.Count();
                 return modelCategoria;
 
