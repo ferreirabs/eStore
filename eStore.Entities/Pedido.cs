@@ -26,8 +26,8 @@ namespace eStore.Entities
 
         public DateTime data_alteracao { get; set; }
 
-        //[Required(ErrorMessage = "O código do comprador é obrigatório")]
-        //public Comprador comprador { get; set; }
+        [Required(ErrorMessage = "O código do comprador é obrigatório")]
+        public Comprador comprador { get; set; }
 
         //[Required(ErrorMessage = "O código do método de pagamento é obrigatório")]
         //public MetodoPagamento metodo_pagamento { get; set; }

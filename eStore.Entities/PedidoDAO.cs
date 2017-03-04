@@ -1,4 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace eStore.Entities
+{
+    public interface IPedidoDAO
+    {
+        int Quantidade();
+        int QuantidadePorStatus(int status);
+        int QuantidadePorComprador(Comprador comprador);
+        List<Pedido> Listar();
+        List<Pedido> ListarPorStatus(int status);
+        List<Pedido> ListarPorComprador(Comprador comprador);
+        bool Criar(Pedido pedido);
+        bool Editar(Pedido pedido, int state);
+        bool Remover(Pedido pedido);
+    }
+}
+
+using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
 using System;
@@ -18,22 +39,100 @@ namespace eStore.Entities
     {
         eStoreContext db = new eStoreContext();
 
-        public int QuantidadePedidos()
+        public int Quantidade()
         {
             int total = 0;
             total = db.Pedido.Count<Pedido>();
             return total;
         }
 
-        public List<Pedido> ListarPedidos()
+        public int QuantidadePorStatus(int status)
+        {
+            try
+            {
+                return (from p in db.Pedido where p.status == status select p).Count();
+            }
+            catch(Exception)
+            {
+                return 0;
+            }
+        }
+
+        public int QuantidadePorComprador(Comprador comprador)
+        {
+            try
+            {
+                return (from p in db.Pedido where p.comprador == comprador select p).Count();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public List<Pedido> Listar()
         {
             return db.Pedido.ToList<Pedido>();
         }
 
-        public List<Pedido> ListarPedidosStatus(int status)
+        public List<Pedido> ListarPorStatus(int status)
         {
             var query = from p in db.Pedido where p.status == status select p;
             return query.ToList<Pedido>();
+        }
+
+        public List<Pedido> ListarPorComprador(Comprador comprador)
+        {
+            var query = from p in db.Pedido where p.comprador == comprador select p;
+            return query.ToList<Pedido>();
+        }
+
+        public bool Criar(Pedido pedido)
+        {
+            try
+            {
+                db.Pedido.Add(pedido);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+
+        public bool Editar(Pedido pedido, int state)
+        {
+            try
+            {
+                db.Entry(pedido).State = (EntityState)state;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Remover(Pedido pedido)
+        {
+            try
+            {
+                db.Pedido.Remove(pedido);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
         }
     }
 }
