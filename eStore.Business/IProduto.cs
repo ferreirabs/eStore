@@ -10,7 +10,6 @@ namespace eStore.Business
 {
     public interface IProduto
     {
-
         bool Criar(Entities.Produto produto);
         bool Remover(Entities.Produto produto);
         bool Remover(int id);

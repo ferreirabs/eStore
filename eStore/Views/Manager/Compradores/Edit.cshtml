@@ -1,0 +1,155 @@
+﻿@model eStore.ModelView.ModelComprador
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar Comprador</title>
+</head>
+<body>
+    <br />
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        Editar Comprador
+    </span>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="titulo_pagina">Cadastro do Comprador: @Model.Nome</div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="mensagem_erro">
+                    @Html.ValidationMessage("CustomError")
+                </div>
+            }
+            <div class="manger_titulos_azul">
+                Dados Pessoais
+            </div>
+
+            @Html.HiddenFor(model => Model.Id)
+            <div class="input_cadastro">
+                <div class="label_name">
+                    Data do Cadastro: @Model.DataCadastro
+                </div>
+            </div>
+                <hr />
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.Tipo)
+                    </div>
+                    <div class="input_radio">
+                        <input type="radio" name="tipo_pessoa" id="tipo_pessoa" value="1">&nbsp;Pessoa Fisica &nbsp;
+                        <input type="radio" name="tipo_pessoa" id="tipo_pessoa" value="2">&nbsp;Pessoa Juridica
+                    </div>
+                </div>
+
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.Nome)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.Nome, new { htmlAttributes = new { @class = "form-control", @size = "100" } })
+                        @Html.ValidationMessageFor(modelItem => Model.Nome, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.Email)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.Email, new { htmlAttributes = new { @class = "form-control", @size = "100" } })
+                        @Html.ValidationMessageFor(modelItem => Model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.Senha)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.Senha, new { htmlAttributes = new { @class = "form-control", @size = "20" } })
+                        @Html.ValidationMessageFor(modelItem => Model.Senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.Profissao)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.Profissao, new { htmlAttributes = new { @class = "form-control", @size = "100" } })
+                        @Html.ValidationMessageFor(modelItem => Model.Profissao, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.RG)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.RG, new { htmlAttributes = new { @class = "form-control", @size = "20" } })
+                        @Html.ValidationMessageFor(modelItem => Model.RG, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.CPF)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.CPF, new { htmlAttributes = new { @class = "form-control", @size = "20" } })
+                        @Html.ValidationMessageFor(modelItem => Model.CPF, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        @Html.DisplayNameFor(modelItem => Model.Bloqueado)
+                    </div>
+                    <div class="col-md-10">
+                        <div class="input_checkbox">
+                            @Html.EditorFor(modelItem => Model.Bloqueado)
+                            @Html.ValidationMessageFor(modelItem => Model.Bloqueado, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="manger_titulos_azul">
+                    Endereço
+                </div>
+
+                <div>
+                    <div style="text-align:left;float:left;">
+                        <div class="">
+                            <input type="submit" value="SALVAR" class="botao_verde" />
+                        </div>
+                    </div>
+
+                    <div style="text-align:right;">
+                        <a href="@Url.Action("GerenciarCompradores", "Manager")">
+                            <div class="botao_azul">
+                                VOLTAR
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+    }
+</body>

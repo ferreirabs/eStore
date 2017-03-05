@@ -4,7 +4,14 @@ namespace eStore.Entities
 {
     public interface ICompradorDAO
     {
-        bool Create(Comprador comprador);
-        List<Comprador> Listar();
+        IEnumerable<Comprador> Listar();
+        IEnumerable<Comprador> ListarPorNome(string nome);
+        IEnumerable<Comprador> ListarPorEmail(string email);
+        IEnumerable<Comprador> ListarPorCpf(string cpf);
+        IEnumerable<Comprador> ListarPorCnpj(string cnpj);
+        /*bool Criar(Comprador Comprador);
+        bool Remover(Comprador Comprador);
+        bool Editar(Comprador Comprador, int state);*/
+        //bool Salvar(Comprador Comprador);
     }
 }

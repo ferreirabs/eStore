@@ -1,0 +1,142 @@
+﻿@model eStore.ModelView.ModelComprador
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gerenciar Compradores</title>
+</head>
+<body>
+    <br />
+
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        Gerenciar Compradores
+    </span>
+
+    <div class="container_busca_titulo">
+        Busca
+    </div>
+
+
+    <div class="container_busca">
+        <div>
+            <div style="width: 350px;float: left;">
+                @using (Html.BeginForm("ListarCompradorPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="nome">
+                    <input type="submit" value="PESQUISAR POR NOME" class="botao_pesquisar_azul" />
+                }
+            </div>
+            <div>
+                @using (Html.BeginForm("ListarCompradorPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="email">
+                    <input type="submit" value="PESQUISAR POR EMAIL" class="botao_pesquisar_azul" />
+                }
+            </div>
+            <div style="width: 350px;float: left;">
+                @using (Html.BeginForm("ListarCompradorPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="cpf">
+                    <input type="submit" value="PESQUISAR POR CPF" class="botao_pesquisar_azul" />
+                }
+            </div>
+            <div>
+                @using (Html.BeginForm("ListarCompradorPorFiltro", "Manager"))
+                {
+                    <input type="text" name="filtro_valor">
+                    <input type="hidden" name="filtro_tipo" value="cnpj">
+                    <input type="submit" value="PESQUISAR POR CNPJ" class="botao_pesquisar_azul" />
+                }
+            </div>
+        </div>
+        <div>
+
+            <a href="@Url.Action("CriarCategoria", "Manager")">
+                <div class="botao_verde">
+                    NOVO COMPRADOR
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="info_cabecalho_tabelas">
+
+        Página @Model.lista_compradores.FirstItemOnPage de @Model.lista_compradores.PageCount | Total de @Model.total_compradores COMPRADORES
+        @Html.PagedListPager(Model.lista_compradores, page => Url.Action("GerenciarCompradores",
+                                 new { page, pageSize = Model.lista_compradores.PageSize }))
+    </div>
+    <table id="box-table-a" summary="Employee Pay Sheet">
+        @if (Model.lista_compradores.Count() > 0)
+        {
+
+
+            <thead>
+                <tr>
+                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.Codigo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.Email)</th>
+                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.DataCadastro)</th>
+                    <th scope="col" style="width:10%;">Bloqueado?</th>
+                    <th scope="col" style="width:10%;">Editar</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var item in Model.lista_compradores)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.data_cadastro)
+                        </td>
+                        <td>
+                            @if (item.bloqueado.Equals(true)){
+                                <img src="@Url.Content("~/Assets/manager/")images/aprovado.png" />
+                            }
+                            else { 
+                                <img src="@Url.Content("~/Assets/manager/")images/aprovado_off.png" />
+                            }
+                        </td>
+                        <td>
+                            <a href="@Url.Action("EditComprador", "Manager", new { id = item.id })">
+                                <img src="@Url.Content("~/Assets/manager/")images/editar.png" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+        else
+        {
+            <tr>
+                <td class="mensagem_aviso">
+                    <span>Ops! Nenhum Comprador encontrado :( </span>
+                    <br />
+                </td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>

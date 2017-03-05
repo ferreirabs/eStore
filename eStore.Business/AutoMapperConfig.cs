@@ -17,6 +17,9 @@ namespace eStore.Business
 
             Mapper.CreateMap<Entities.Produto, ModelView.ModelProduto>()
                .ReverseMap();
+            
+            Mapper.CreateMap<Entities.Comprador, ModelView.ModelComprador>()
+               .ReverseMap();
         }
     }
 }

@@ -56,6 +56,14 @@ margin: 5px;
 font-size: 18px;
 }
 
+.manger_titulos_azul {
+font-weight: bold;
+color: #0095d4;
+font-size: 18px;
+padding: 10px 20px;
+background-color: #f7fafd;
+}
+
 .info_cabecalho_tabelas{
 
     background-color: #e4e4e4;
@@ -97,6 +105,7 @@ min-width: 100px;
 height: 40px;
 line-height: 40px;
 font-size: 14px;
+font-weight: bold;
 padding: 0 10px;
 letter-spacing: .05em;
 color: #fff;
@@ -115,6 +124,7 @@ min-width: 100px;
 height: 40px;
 line-height: 40px;
 font-size: 10px;
+font-weight: bold;
 padding: 0 10px;
 letter-spacing: .05em;
 color: #fff;
@@ -133,6 +143,7 @@ border-radius: 0.0rem 0.4rem 0.4rem 0.0rem;
 /* height: 40px; */
 line-height: 30px;
 font-size: 10px;
+font-weight: bold;
 padding: 0px 10px 0px 10px;
 letter-spacing: .05em;
 color: #fff;
@@ -152,6 +163,7 @@ min-width: 100px;
 height: 40px;
 line-height: 40px;
 font-size: 14px;
+font-weight: bold;
 padding: 0 10px;
 letter-spacing: .05em;
 color: #fff;

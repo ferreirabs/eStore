@@ -21,6 +21,7 @@ namespace eStore.Controllers
         private bool logado;
         private eStore.Business.Produto bproduto = new eStore.Business.Produto();
         private eStore.Business.Categoria bcategoria = new eStore.Business.Categoria();
+        private eStore.Business.Comprador bcomprador = new eStore.Business.Comprador();
         //private eStoreContext db = new eStoreContext();
 
         #region login
@@ -75,6 +76,54 @@ namespace eStore.Controllers
         }
 
         #endregion login
+
+        #region compradores
+
+            [HttpPost]
+            public ActionResult ListarCompradorPorFiltro(string filtro_valor, string filtro_tipo)
+            {
+                var lcompradores = bcomprador.ListarPorFiltro(filtro_valor, filtro_tipo);
+                return View("~/Views/Manager/Compradores/List.cshtml", lcompradores);
+            }
+
+            [HttpGet]
+            public ActionResult GerenciarCompradores(int page = 1, int pageSize = 10)
+            {
+                var lcompradores = bcomprador.Listar(page, pageSize);
+                return View("~/Views/Manager/Compradores/List.cshtml", lcompradores);
+            }
+
+            public ActionResult EditComprador(int? id)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                ModelView.ModelComprador comprador = bcomprador.Find(id);
+                if (comprador == null)
+                {
+                    return HttpNotFound();
+                }
+                return View("~/Views/Manager/Compradores/Edit.cshtml", comprador);
+            }
+
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public ActionResult EditComprador([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado")] ModelView.ModelComprador model_comprador)
+            {
+                if (ModelState.IsValid)
+                {
+                    /*if (!bcomprador.Editar(model_comprador))
+                    {
+                        ModelState.AddModelError("CustomError", bproduto.msgErro.Get("EXECUTAR_ACAO"));
+                        return View("~/Views/Manager/Produtos/Edit.cshtml", model_comprador);
+                    }*/
+                }
+                return RedirectToAction("GerenciarCompradores");
+
+            }
+
+        #endregion compradores
 
         #region produtos
         [HttpPost]

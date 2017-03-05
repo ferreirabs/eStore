@@ -177,9 +177,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703042331092_Initial.cs" />
-    <Compile Include="Migrations\201703042331092_Initial.Designer.cs">
-      <DependentUpon>201703042331092_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201703051601003_Initial.cs" />
+    <Compile Include="Migrations\201703051601003_Initial.Designer.cs">
+      <DependentUpon>201703051601003_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ModelCategoria.cs" />
@@ -349,13 +349,14 @@
     <Content Include="Views\Manager\Produtos\Create.cshtml" />
     <Content Include="Views\Manager\Produtos\Edit.cshtml" />
     <Content Include="Views\Manager\Produtos\Delete.cshtml" />
+    <Content Include="Views\Manager\Compradores\List.cshtml" />
+    <Content Include="Views\Manager\Compradores\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\User\css\" />
     <Folder Include="Assets\User\images\" />
     <Folder Include="Assets\User\js\" />
-    <Folder Include="Views\Manager\Compradores\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -379,8 +380,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703042331092_Initial.resx">
-      <DependentUpon>201703042331092_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703051601003_Initial.resx">
+      <DependentUpon>201703051601003_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
