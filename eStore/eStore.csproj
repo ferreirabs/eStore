@@ -347,6 +347,8 @@
     <Content Include="Views\ModelCategorias\Index.cshtml" />
     <Content Include="Views\Manager\Produtos\List.cshtml" />
     <Content Include="Views\Manager\Produtos\Create.cshtml" />
+    <Content Include="Views\Manager\Produtos\Edit.cshtml" />
+    <Content Include="Views\Manager\Produtos\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

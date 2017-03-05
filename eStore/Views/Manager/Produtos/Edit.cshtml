@@ -1,0 +1,109 @@
+﻿@model eStore.ModelView.ModelProduto
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar Produto</title>
+</head>
+<body>
+    <br />
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        Editar Produto
+    </span>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="titulo_pagina">@Model.Nome</div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="mensagem_erro">
+                    @Html.ValidationMessage("CustomError")
+                </div>
+            }
+
+            @Html.HiddenFor(model => Model.Id)
+            <div class="input_cadastro">
+                <div class="label_name">
+                    @Html.DisplayNameFor(modelItem => Model.Codigo)
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => Model.Codigo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(modelItem => Model.Codigo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    @Html.DisplayNameFor(modelItem => Model.Nome)
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => Model.Nome, new { htmlAttributes = new { @class = "form-control", @size = "50" } })
+                    @Html.ValidationMessageFor(modelItem => Model.Nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    @Html.DisplayNameFor(modelItem => Model.Preco)
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => Model.Preco, new { htmlAttributes = new { @class = "form-control", @size = "50" } })
+                    @Html.ValidationMessageFor(modelItem => Model.Preco, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    @Html.DisplayNameFor(modelItem => Model.Ordem)
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => Model.Ordem, new { htmlAttributes = new { @class = "form-control", @size = "50" } })
+                    @Html.ValidationMessageFor(modelItem => Model.Ordem, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    @Html.DisplayNameFor(modelItem => Model.Bloqueado)
+                </div>
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(modelItem => Model.Bloqueado)
+                        @Html.ValidationMessageFor(modelItem => Model.Bloqueado, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div style="text-align:left;float:left;">
+                    <div class="">
+                        <input type="submit" value="SALVAR" class="botao_verde" />
+                    </div>
+                </div>
+
+                <div style="text-align:right;">
+                    <a href="@Url.Action("GerenciarProdutos", "Manager")">
+                        <div class="botao_azul">
+                            VOLTAR
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    }
+</body>

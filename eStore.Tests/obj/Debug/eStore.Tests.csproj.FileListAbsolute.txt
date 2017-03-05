@@ -138,6 +138,7 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\System.Web.WebP
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.Entities.dll
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\System.Web.Optimization.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Owin.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.Business.dll
@@ -146,7 +147,6 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\AutoMapper.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\PagedList.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.pdb
@@ -159,6 +159,7 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\System.Web.WebP
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.Entities.pdb
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\System.Web.Optimization.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.Business.pdb
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\eStore.ModelView.pdb
@@ -166,9 +167,7 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\AutoMapper.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\PagedList.xml
-C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.pdb

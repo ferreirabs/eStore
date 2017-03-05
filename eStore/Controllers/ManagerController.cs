@@ -154,7 +154,7 @@ namespace eStore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditProduto([Bind(Include = "id,codigo,nome,descricao,bloqueado")] ModelView.ModelProduto model_produto)
+        public ActionResult EditProduto([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado")] ModelView.ModelProduto model_produto)
         {
             if (ModelState.IsValid)
             {

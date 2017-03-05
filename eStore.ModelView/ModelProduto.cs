@@ -18,7 +18,7 @@ namespace eStore.ModelView
         [Display(Name = "Nome:", Description = "Nome do Produto.")]
         public string Nome { get; set; }
         [Display(Name = "Preço:", Description = "Preço do Produto.")]
-        public Decimal Preco { get; set; }
+        public decimal Preco { get; set; }
         [Display(Name = "Ordem:", Description = "Ordem de exibição.")]
         public int Ordem { get; set; }
         [Display(Name = "Bloqueado:", Description = "Status do produto.")]
