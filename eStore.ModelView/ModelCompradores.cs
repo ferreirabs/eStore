@@ -50,10 +50,16 @@ namespace eStore.ModelView
 
         public ModelComprador() {
             lista_compradores = new PagedList<Comprador>(null,1,1);
+            Tipo = new TipoPessoa();
+            Enderecos = new List<Endereco>();
+            Telefone1 = new Telefone();
+            Telefone2 = new Telefone();
+            Nascimento = new DateTime();
         }
 
         public ModelComprador(Comprador comprador)
         {
+            Id = comprador.id;
             Codigo = comprador.codigo;
             Nome = comprador.nome;
             Email = comprador.email;
@@ -70,6 +76,7 @@ namespace eStore.ModelView
             Telefone2 = comprador.telefone2;
             DataCadastro = comprador.data_cadastro.ToString();
             Bloqueado = comprador.bloqueado;
+            DataCadastro = comprador.data_cadastro.ToString();
             lista_compradores = new PagedList<Comprador>(null, 1, 1);
         }
 

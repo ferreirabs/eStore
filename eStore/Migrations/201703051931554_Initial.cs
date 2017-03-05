@@ -53,6 +53,7 @@ namespace eStore.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
+                        comprador_id = c.Int(nullable: false),
                         cep = c.String(),
                         endereco = c.String(),
                         numero = c.String(),
@@ -62,11 +63,11 @@ namespace eStore.Migrations
                         estado = c.String(),
                         referencia = c.String(),
                         principal = c.Boolean(nullable: false),
-                        Comprador_id = c.Int(),
+                        //Comprador_id = c.Int(),
                     })
                 .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.Comprador", t => t.Comprador_id)
-                .Index(t => t.Comprador_id);
+                .ForeignKey("dbo.Comprador", t => t.comprador_id)
+                .Index(t => t.comprador_id);
             
             CreateTable(
                 "dbo.Telefone",
@@ -150,10 +151,10 @@ namespace eStore.Migrations
             DropForeignKey("dbo.Comprador", "tipo_id", "dbo.TipoPessoa");
             DropForeignKey("dbo.Comprador", "telefone2_id", "dbo.Telefone");
             DropForeignKey("dbo.Comprador", "telefone1_id", "dbo.Telefone");
-            DropForeignKey("dbo.Endereco", "Comprador_id", "dbo.Comprador");
+            DropForeignKey("dbo.Endereco", "comprador_id", "dbo.Comprador");
             DropIndex("dbo.Produto", new[] { "Categoria_id" });
             DropIndex("dbo.Pedido", new[] { "comprador_id" });
-            DropIndex("dbo.Endereco", new[] { "Comprador_id" });
+            DropIndex("dbo.Endereco", new[] { "comprador_id" });
             DropIndex("dbo.Comprador", new[] { "tipo_id" });
             DropIndex("dbo.Comprador", new[] { "telefone2_id" });
             DropIndex("dbo.Comprador", new[] { "telefone1_id" });

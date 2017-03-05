@@ -1,6 +1,7 @@
 ﻿using eStore.Entities.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -40,12 +41,41 @@ namespace eStore.Entities
         {
             try
             {
-                return db.Comprador.FirstOrDefault(c => c.id == id);
+                var comprador = db.Comprador.FirstOrDefault(c => c.id == id);
+                comprador.enderecos = GetEnderecos(id);
+                return comprador;
             }
             catch (Exception)
             {
 
                 return null;
+            }
+        }
+
+        public List<Endereco> GetEnderecos(int? id_comprador)
+        {
+            try
+            {
+                return db.Endereco.Where(e => e.comprador_id == id_comprador).ToList();
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
+        public bool Salvar(Comprador comprador)
+        {
+            try
+            {
+                db.Entry(comprador).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 

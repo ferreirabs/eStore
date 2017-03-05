@@ -22,12 +22,15 @@ namespace eStore.Entities.Context
         public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Frete> Frete { get; set; }
         public DbSet<Comprador> Comprador { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder dbModelBuilder)
         {
             dbModelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
         }
+
+        //public System.Data.Entity.DbSet<eStore.Entities.Endereco> Enderecoes { get; set; }
 
         //public System.Data.Entity.DbSet<eStore.ModelView.ModelCompradores> ModelCompradores { get; set; }
 

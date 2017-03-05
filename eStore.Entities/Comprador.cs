@@ -43,6 +43,7 @@ namespace eStore.Entities
     {
         [Key]
         public int id { get; set; }
+        public int comprador_id { get; set; }
 
         public string cep { get; set; }
         public string endereco { get; set; }
@@ -53,6 +54,8 @@ namespace eStore.Entities
         public string estado { get; set; }
         public string referencia { get; set; }
         public bool principal { get; set; }
+        
+
     }
 
     public class Telefone

@@ -18,8 +18,9 @@
     <span class="manager_migalha">
         Editar Comprador
     </span>
+    
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("EditComprador", "Manager", FormMethod.Post, Model))
     {
         @Html.AntiForgeryToken()
 
@@ -39,6 +40,8 @@
             </div>
 
             @Html.HiddenFor(model => Model.Id)
+            @Html.HiddenFor(model => Model.DataCadastro)
+            @Html.HiddenFor(model => Model.Codigo)
             <div class="input_cadastro">
                 <div class="label_name">
                     Data do Cadastro: @Model.DataCadastro
@@ -60,7 +63,7 @@
                         @Html.DisplayNameFor(modelItem => Model.Nome)
                     </div>
                     <div class="col-md-10">
-                        @Html.EditorFor(modelItem => Model.Nome, new { htmlAttributes = new { @class = "form-control", @size = "100" } })
+                        @Html.EditorFor(modelItem => Model.Nome, new { htmlAttributes = new { @class = "form-control", @size = "70" } })
                         @Html.ValidationMessageFor(modelItem => Model.Nome, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -70,7 +73,7 @@
                         @Html.DisplayNameFor(modelItem => Model.Email)
                     </div>
                     <div class="col-md-10">
-                        @Html.EditorFor(modelItem => Model.Email, new { htmlAttributes = new { @class = "form-control", @size = "100" } })
+                        @Html.EditorFor(modelItem => Model.Email, new { htmlAttributes = new { @class = "form-control", @size = "50" } })
                         @Html.ValidationMessageFor(modelItem => Model.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -90,7 +93,7 @@
                         @Html.DisplayNameFor(modelItem => Model.Profissao)
                     </div>
                     <div class="col-md-10">
-                        @Html.EditorFor(modelItem => Model.Profissao, new { htmlAttributes = new { @class = "form-control", @size = "100" } })
+                        @Html.EditorFor(modelItem => Model.Profissao, new { htmlAttributes = new { @class = "form-control", @size = "30" } })
                         @Html.ValidationMessageFor(modelItem => Model.Profissao, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -133,7 +136,12 @@
                 <div class="manger_titulos_azul">
                     Endereço
                 </div>
-
+                <div>
+                    
+                    <!--Html.EditorForModel("Endereco.cshtml", Model.Enderecos[0]);-->
+                    @Html.EditorFor(model => Model.Enderecos[0], "Manager/Compradores/EditEndereco")
+                    <!--Html.Partial("~/Views/Manager/Compradores/EditEnderecos.cshtml", Model.Enderecos[0], new ViewDataDictionary { { "id_comprador", Model.Id } })-->
+                </div>
                 <div>
                     <div style="text-align:left;float:left;">
                         <div class="">

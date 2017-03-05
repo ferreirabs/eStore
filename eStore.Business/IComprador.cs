@@ -18,5 +18,7 @@ namespace eStore.Business
         //IEnumerable<Entities.Comprador> Listar();
         ModelComprador Listar(int page, int pageSize);
         ModelComprador ListarPorFiltro(string valor, string tipo);
+        //List<Endereco> GetEnderecos(int id_comprador);
+        bool Editar(ModelView.ModelComprador comprador);
     }
 }

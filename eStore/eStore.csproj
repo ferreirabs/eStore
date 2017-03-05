@@ -177,9 +177,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703051601003_Initial.cs" />
-    <Compile Include="Migrations\201703051601003_Initial.Designer.cs">
-      <DependentUpon>201703051601003_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201703051931554_Initial.cs" />
+    <Compile Include="Migrations\201703051931554_Initial.Designer.cs">
+      <DependentUpon>201703051931554_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ModelCategoria.cs" />
@@ -351,6 +351,7 @@
     <Content Include="Views\Manager\Produtos\Delete.cshtml" />
     <Content Include="Views\Manager\Compradores\List.cshtml" />
     <Content Include="Views\Manager\Compradores\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Manager\Compradores\EditEndereco.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -380,8 +381,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703051601003_Initial.resx">
-      <DependentUpon>201703051601003_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703051931554_Initial.resx">
+      <DependentUpon>201703051931554_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

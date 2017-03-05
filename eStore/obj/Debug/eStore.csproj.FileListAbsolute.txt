@@ -183,8 +183,8 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.Owin.Security.Goo
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\bin\AutoMapper.xml
-C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.csprojResolveAssemblyReference.cache
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.pdb
+C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.csprojResolveAssemblyReference.cache
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.Migrations.Initial.resources
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.csproj.GenerateResource.Cache

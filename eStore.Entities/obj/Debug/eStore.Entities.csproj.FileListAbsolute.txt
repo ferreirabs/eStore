@@ -25,3 +25,4 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Entities\bin\EntityFramework.xm
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Entities\bin\EntityFramework.SqlServer.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Entities\obj\Debug\eStore.Entities.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Entities\obj\Debug\eStore.Entities.pdb
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Entities\obj\Debug\eStore.Entities.csprojResolveAssemblyReference.cache

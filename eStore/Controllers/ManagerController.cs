@@ -106,18 +106,18 @@ namespace eStore.Controllers
                 }
                 return View("~/Views/Manager/Compradores/Edit.cshtml", comprador);
             }
-
+                        
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public ActionResult EditComprador([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado")] ModelView.ModelComprador model_comprador)
+            public ActionResult EditComprador(ModelView.ModelComprador model_comprador)
             {
                 if (ModelState.IsValid)
                 {
-                    /*if (!bcomprador.Editar(model_comprador))
+                    if (!bcomprador.Editar(model_comprador))
                     {
                         ModelState.AddModelError("CustomError", bproduto.msgErro.Get("EXECUTAR_ACAO"));
-                        return View("~/Views/Manager/Produtos/Edit.cshtml", model_comprador);
-                    }*/
+                        return View("~/Views/Manager/Compradores/Edit.cshtml", model_comprador);
+                    }
                 }
                 return RedirectToAction("GerenciarCompradores");
 
@@ -218,9 +218,7 @@ namespace eStore.Controllers
         }
 
         #endregion produtos
-
-
-
+        
         #region Categorias
         [HttpPost]
         public ActionResult ListarCategoriaPorFiltro(string filtro_valor, string filtro_tipo)
