@@ -1,0 +1,77 @@
+﻿@model eStore.ModelView.ModelProdutoLoja
+
+@{
+    ViewBag.Title = "Produto";
+    Layout = "~/Views/Shared/LayoutLoja.cshtml";
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Assets/Templates/GreTong/")css/etalage.css">
+<script src="@Url.Content("~/Assets/Templates/GreTong/")js/jquery.etalage.min.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+
+        $('#etalage').etalage({
+            thumb_image_width: 300,
+            thumb_image_height: 400,
+            source_image_width: 900,
+            source_image_height: 1200,
+            show_hint: true,
+            click_callback: function (image_anchor, instance_id) {
+                alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+            }
+        });
+
+    });
+</script>
+
+
+
+<div class="row single">
+    <div class="col-md-9 det">
+        <div class="single_left">
+            <div class="grid images_3_of_2">
+                <ul id="etalage">
+                    <li>
+                        <a href="optionallink.html">
+                            <img class="etalage_thumb_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" />
+                            <img class="etalage_source_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" title="" />
+                        </a>
+                    </li>
+                    <li>
+                        <img class="etalage_thumb_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" />
+                        <img class="etalage_source_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" title="" />
+                    </li>
+                    <li>
+                        <img class="etalage_thumb_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" />
+                        <img class="etalage_source_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" />
+                    </li>
+                    <li>
+                        <img class="etalage_thumb_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" />
+                        <img class="etalage_source_image" src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" />
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="desc1 span_3_of_2">
+                <h3>@Html.DisplayFor(model => Model.produto.nome)</h3>
+                <br>
+                <span class="code">Código do produto: @Html.DisplayFor(model => Model.produto.codigo)</span>
+                
+                <div class="price">
+                    <span class="text">Preço:</span>
+                    <span class="price-new">R$ @Html.DisplayFor(model => Model.produto.preco)</span>
+                </div>
+                <div class="btn_form">
+                    <a href="checkout.html">COMPRAR</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="single-bottom1">
+            <h6>Descrição</h6>
+            <p class="prod-desc">@Html.DisplayFor(model => Model.produto.nome)</p>
+        </div>
+       
+    </div>
+    <div class="clearfix"></div>
+</div>

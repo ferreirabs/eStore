@@ -170,7 +170,7 @@ a.order {
   margin:3em 0;
 }
 a.order:hover{
-	background:#615c85;
+	background:#0095d4;
 }
 .total-item,.cart-items{
 	margin-top:0em;
@@ -198,7 +198,7 @@ a.cpns{
 	font-weight:600;
 }
 a.cpns:hover{
-	background: #615c85;
+	background: #0095d4;
 }
 .total-item p{
 	font-size:0.9em;
@@ -223,7 +223,7 @@ a.continue{
    margin-bottom:2em;
 }
 a.continue:hover{
-	background:#615c85;
+	background:#0095d4;
 }
 ul.total_price{
 	padding: 0;

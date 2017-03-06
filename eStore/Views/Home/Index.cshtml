@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/LayoutLoja.cshtml";
 }
 
+@Html.Partial("~/Views/Home/VitrineCategorias.cshtml", Model.categorias)
+
 <div class="arriv-top">
     <div class="col-md-6 arriv-left" style="padding-left: 0; margin: 0px 280px;">
         <img src="@Url.Content("~/Assets/Templates/GreTong/")images/1.jpg" class="img-responsive" alt="">

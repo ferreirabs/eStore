@@ -361,6 +361,8 @@
     <Content Include="Views\Produtos\Produto.cshtml" />
     <Content Include="Views\Home\VitrineProdutos.cshtml" />
     <Content Include="Views\Produtos\Produtos.cshtml" />
+    <Content Include="Views\Home\VitrineCategorias.cshtml" />
+    <Content Include="Views\Home\Produto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

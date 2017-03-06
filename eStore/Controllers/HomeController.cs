@@ -27,7 +27,17 @@ namespace eStore.Controllers
             return View(modelVitrine);
         }
 
-        
+        public ActionResult ExibirProduto(int? id)
+        {
+            ModelView.ModelVitrine modelVitrine = new ModelView.ModelVitrine();
+            modelVitrine.produtos = bproduto.Listar();
+
+            ModelView.ModelProdutoLoja modelProdutoLoja = new ModelView.ModelProdutoLoja();
+            modelProdutoLoja.produto = modelVitrine.produtos.FirstOrDefault(p => p.id == id);
+            return View("~/Views/Home/Produto.cshtml", modelProdutoLoja);
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int seed = new Random().Next(1,1000);
