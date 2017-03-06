@@ -169,6 +169,5 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.Owin.
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\AutoMapper.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\bin\Debug\PagedList.xml
-C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Tests\obj\Debug\eStore.Tests.pdb

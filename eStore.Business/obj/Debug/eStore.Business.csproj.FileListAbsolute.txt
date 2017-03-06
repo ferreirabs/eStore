@@ -23,6 +23,6 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\AutoMapper.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\PagedList.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\PagedList.Mvc.xml
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\bin\EntityFramework.xml
+C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\obj\Debug\eStore.Business.csprojResolveAssemblyReference.cache
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\obj\Debug\eStore.Business.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\obj\Debug\eStore.Business.pdb
-C:\Users\Multivac\Documents\GitHub\eStore\eStore.Business\obj\Debug\eStore.Business.csprojResolveAssemblyReference.cache

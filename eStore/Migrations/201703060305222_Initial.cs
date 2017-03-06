@@ -63,7 +63,7 @@ namespace eStore.Migrations
                         estado = c.String(),
                         referencia = c.String(),
                         principal = c.Boolean(nullable: false),
-                        //Comprador_id = c.Int(),
+                        //comprador_id = c.Int(),
                     })
                 .PrimaryKey(t => t.id)
                 .ForeignKey("dbo.Comprador", t => t.comprador_id)

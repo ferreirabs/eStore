@@ -190,7 +190,7 @@ a.order:hover{
 	margin-right:6em;
 }
 a.cpns{
-	background:#ff6978;
+	background:#0095d4;
 	color:#fff;
 	
 	padding: 10px;
@@ -350,7 +350,7 @@ ul.qty li p{
 	transition: all 0.3s ease-in-out;
 }
 .top_right ul li a:hover{
-	color:#ff6978;
+	color:#0095d4;
 	text-decoration: none;
 }
 .itemContainer{
@@ -534,7 +534,7 @@ fieldset#body {
 	font-family: 'Open Sans', sans-serif;
 	width: auto;
 	float: left;
-	background:#ff6978 ;
+	background:#0095d4 ;
 	color: #fff;
 	font-size: 0.8725em;
 	padding: 8px 20px;
@@ -922,8 +922,8 @@ ul.megamenu.skyblue {
   transition: all 0.3s ease-in-out;
 }
 .crt-btn a:hover{
-  background:#ff6978;
-  border:1px solid #ff6978;
+  background:#0095d4;
+  border:1px solid #0095d4;
 }
 .arriv-info1 {
   position: absolute;
@@ -977,7 +977,7 @@ i.ars {
   border: 1px solid #e9e9e9;
 }
 .special {
-  padding: 4em 0;
+  /*padding: 4em 0;*/
     position: relative;
 }
 i.facebok {
@@ -1260,10 +1260,10 @@ ul.grid_2 li {
 }
 ul.grid_2 li:hover {
   background: #e9e9e9;
-  color: #ff6978;
+  color: #0095d4;
 }
 ul.grid_2 li h5:hover {
-  color: #ff6978;
+  color: #0095d4;
 }
 ul.grid_2 li {
   width: 23%;
@@ -1274,7 +1274,7 @@ ul.grid_2 li {
   text-decoration: none;
 }
 .arriv-info2 a h3:hover{
-  color:#ff6978;
+  color:#0095d4;
 }
 /* start women */
 .w_sidebar{
@@ -1289,7 +1289,7 @@ ul.grid_2 li {
 }
 .w_nav1 h4{
 	text-transform:uppercase;
-	color:#ff6978;
+	color:#0095d4;
 	font-size: 1em;
 	margin-bottom: 5px;
 }
@@ -1586,7 +1586,7 @@ list-style: none;
 }
 /* checked state */
 .sky-form .radio input + i:after {
-	background-color: #ff6978;	
+	background-color: #0095d4;	
 }
 .sky-form .checkbox input + i:after {
 	color: #2da5da;
@@ -1594,7 +1594,7 @@ list-style: none;
 .sky-form .radio input:checked + i,
 .sky-form .checkbox input:checked + i,
 .sky-form .toggle input:checked + i {
-	border-color: #ff6978;	
+	border-color: #0095d4;	
 }
 /* error state */
 .sky-form .state-error input,
@@ -1767,7 +1767,7 @@ list-style: none;
 	text-decoration:none;
 }
 .grid1_of_4 h4 a:hover{
-	color:#ff6978;
+	color:#0095d4;
 }
 .grid1_of_4 p{
 	font-size: 0.8125em;
@@ -1869,7 +1869,7 @@ span.text {
   color: #999;
 }
 span.price-new {
-  color: #ff6978;
+  color: #0095d4;
   margin-right: 15px;
   font-weight: 500;
   font-size: 1.3em;
@@ -2054,7 +2054,7 @@ p.product_descr {
 .button1 {
 	font-family: 'Open Sans', sans-serif;
 	border: none;
-	background:#ff6978;
+	background:#0095d4;
 	padding: 7px 15px;
 	color: #FFF;
 	font-size: 13px;
@@ -2132,7 +2132,7 @@ p.product_descr {
 	display: inline-block;
 	font-size: 1em;
 	padding: 10px 34px;
-	background:#ff6978;
+	background:#0095d4;
 	color:#fff;
 	text-transform:uppercase;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -2260,7 +2260,7 @@ label {
 	color: #ffffff;
 	text-transform: capitalize;
 	display: inline-block;
-	background:#ff6978;
+	background:#0095d4;
 	padding: 10px 20px;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -2310,7 +2310,7 @@ label {
 	margin-right: 5px;
 }
 .shoping_bag h4 span{
-	color:#ff6978;
+	color:#0095d4;
 }
 .s_art {
 	float: right;
@@ -2464,7 +2464,7 @@ ul.s_icons{
 	padding: 10px 20px;
 	font-size: 1.2em;
 	color: #ffffff;
-	background:#ff6978;
+	background:#0095d4;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -2478,7 +2478,7 @@ ul.s_icons{
 	color: #00405d;
 }
 h4.title {
-  color: #ff6978;
+  color: #0095d4;
   margin-bottom: 0.5em;
   font-size: 1.6em;
   line-height: 1.2em;
@@ -2493,7 +2493,7 @@ p.cart {
 }
 p.cart a {
   text-decoration: underline;
-  color: #ff6978;
+  color: #0095d4;
 }
 .check-out {
   padding: 6em 0;
@@ -2556,7 +2556,7 @@ p.cart a {
 	display: inline-block;
 	font-size: 1em;
 	padding: 12px 25px;
-	background:#ff6978;
+	background:#0095d4;
 	color: #fff;
 	text-transform: uppercase;
 	-webkit-transition: all 0.3s ease-in-out;

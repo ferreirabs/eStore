@@ -1,0 +1,25 @@
+﻿@model IEnumerable<eStore.Entities.Produto>
+
+<div class="container">
+    <div class="specia-top">
+        <ul class="grid_2">
+            @foreach (var item in Model)
+            {
+                if(!item.bloqueado)
+                { 
+                    <li>
+                        <a href="details.html"><img src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" alt=""></a>
+                        <div class="special-info grid_1 simpleCart_shelfItem">
+                            <h5 style="text-align: center;">@Html.DisplayFor(modelItem => item.nome)</h5>
+                            <div class="item_add"><span class="item_price"><h6>Apenas R$ @Html.DisplayFor(modelItem => item.preco)</h6></span></div>
+                            <div class="item_add"><span class="item_price"><a href="#">adicionar ao carrinho</a></span></div>
+                        </div>
+                        <br />
+                    </li>
+                    
+                }
+            }
+            <div class="clearfix"> </div>
+        </ul>
+    </div>
+</div>

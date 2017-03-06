@@ -80,6 +80,7 @@
     <Compile Include="ModelCategoria.cs" />
     <Compile Include="ModelCompradores.cs" />
     <Compile Include="ModelProduto.cs" />
+    <Compile Include="ModelVitrine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -177,9 +177,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703051931554_Initial.cs" />
-    <Compile Include="Migrations\201703051931554_Initial.Designer.cs">
-      <DependentUpon>201703051931554_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201703060305222_Initial.cs" />
+    <Compile Include="Migrations\201703060305222_Initial.Designer.cs">
+      <DependentUpon>201703060305222_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ModelCategoria.cs" />
@@ -259,12 +259,18 @@
     <Content Include="Assets\Templates\GreTong\images\d2.jpg" />
     <Content Include="Assets\Templates\GreTong\images\d3.jpg" />
     <Content Include="Assets\Templates\GreTong\images\d4.jpg" />
+    <Content Include="Assets\Templates\GreTong\images\eStore_logo_v3.png" />
     <Content Include="Assets\Templates\GreTong\images\facebook.png" />
     <Content Include="Assets\Templates\GreTong\images\gift.jpg" />
+    <Content Include="Assets\Templates\GreTong\images\image_not_found.jpg" />
+    <Content Include="Assets\Templates\GreTong\images\image_not_found.png" />
     <Content Include="Assets\Templates\GreTong\images\img-sprite.png" />
     <Content Include="Assets\Templates\GreTong\images\line.png" />
     <Content Include="Assets\Templates\GreTong\images\login.jpg" />
     <Content Include="Assets\Templates\GreTong\images\logo.png" />
+    <Content Include="Assets\Templates\GreTong\images\logo_admin.png" />
+    <Content Include="Assets\Templates\GreTong\images\logo_old.png" />
+    <Content Include="Assets\Templates\GreTong\images\logo_old2.png" />
     <Content Include="Assets\Templates\GreTong\images\phon.png" />
     <Content Include="Assets\Templates\GreTong\images\right_arrow.png" />
     <Content Include="Assets\Templates\GreTong\images\search.png" />
@@ -352,9 +358,13 @@
     <Content Include="Views\Manager\Compradores\List.cshtml" />
     <Content Include="Views\Manager\Compradores\Edit.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Manager\Compradores\EditEndereco.cshtml" />
+    <Content Include="Views\Produtos\Produto.cshtml" />
+    <Content Include="Views\Home\VitrineProdutos.cshtml" />
+    <Content Include="Views\Produtos\Produtos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Templates\Skywalker\" />
     <Folder Include="Assets\User\css\" />
     <Folder Include="Assets\User\images\" />
     <Folder Include="Assets\User\js\" />
@@ -381,8 +391,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703051931554_Initial.resx">
-      <DependentUpon>201703051931554_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703060305222_Initial.resx">
+      <DependentUpon>201703060305222_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
