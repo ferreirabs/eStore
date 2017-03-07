@@ -1,6 +1,8 @@
-﻿
+﻿@model eStore.ModelView.ModelDashBoardManager
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutManager.cshtml";
 }
 
+@Html.Partial("~/Views/Manager/DashboardManager.cshtml", Model)

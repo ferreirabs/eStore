@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="ModelCategoria.cs" />
     <Compile Include="ModelCompradores.cs" />
+    <Compile Include="ModelDashBoardManager.cs" />
     <Compile Include="ModelProduto.cs" />
     <Compile Include="ModelProdutoLoja.cs" />
     <Compile Include="ModelVitrine.cs" />

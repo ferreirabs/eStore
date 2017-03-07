@@ -28,11 +28,14 @@ namespace eStore.Controllers
         // GET: Manager
         public ActionResult Index()
         {
-
-            //logado = (bool)System.Web.HttpContext.Current.Session.Keys.["logado"];
+            ModelView.ModelDashBoardManager dashboard = new ModelView.ModelDashBoardManager();
+            dashboard.categorias = bcategoria.Listar(1, 10);
+            dashboard.produtos = bproduto.Listar(1,10);
+            dashboard.compradores = bcomprador.Listar(1,10);
+            
             if (true)
             {
-                return View();
+                return View(dashboard);
             }
             else
             {

@@ -1,0 +1,112 @@
+﻿@model eStore.ModelView.ModelDashBoardManager
+
+<div style="background-color:#fafbfd;height: 200px;">
+    <div class="container_busca_titulo">
+        <bold>ESTÁTISTICAS</bold>
+    </div>
+    <div style="margin: 5px 0px;padding: 10px;">
+        
+        <div style="width: 210px;height: 120px;float: left;margin: 0px 25px;">
+            <div style="border-bottom: solid 8px #4cb1cf;width: 100%;height: 100%;background-color: #fff;">
+                <div style="text-align: center;padding: 40px 0px;">
+                    <span style="font-size:30px;font-weight:bold">@Html.DisplayFor(model => model.produtos.total_produtos)</span>
+                    <div style="color: #000;font-size: 15px;padding: 10px;">
+                        PRODUTOS
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 210px;height: 120px;float: left;margin: 0px 25px;">
+            <div style="border-bottom: solid 8px #4cb1cf;width: 100%;height: 100%;background-color: #fff;">
+                <div style="text-align: center;padding: 40px 0px;">
+                    <span style="font-size:30px;font-weight:bold">@Html.DisplayFor(model => model.compradores.total_compradores)</span>
+                    <div style="color: #000;font-size: 15px;padding: 10px;">
+                        COMPRADORES
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 210px;height: 120px;float: left;margin: 0px 25px;">
+            <div style="border-bottom: solid 8px #4cb1cf;width: 100%;height: 100%;background-color: #fff;">
+                <div style="text-align: center;padding: 40px 0px;">
+                    <span style="font-size:30px;font-weight:bold">5</span>
+                    <div style="color: #000;font-size: 15px;padding: 10px;">
+                        PEDIDOS
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 210px;height: 120px;float: left;margin: 0px 25px;">
+            <div style="border-bottom: solid 8px #4cb1cf;width: 100%;height: 100%;background-color: #fff;">
+                <div style="text-align: center;padding: 40px 0px;">
+                    <span style="font-size:30px;font-weight:bold">R$ 666,66</span>
+                    <div style="color: #000;font-size: 15px;padding: 10px;">
+                        PEDIDOS EM R$
+                        <br/>
+                        <span>atualizado: @DateTime.Now</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div style="background-color:#fafbfd;height: 280px;">
+    <div class="container_busca_titulo">
+        <bold>LINKS RÁPIDOS</bold>
+    </div>
+    <div style="margin:20px;padding:10px;">
+        
+        <div style="width: 140px;height: 190px;float: left;margin: 0px 25px;">
+            <a href="@Url.Action("GerenciarProdutos", "Manager")">
+                <div style="border: solid 0px #fff;width: 100%;height: 100%; background-color:#fff;">
+                    <div style="text-align: center;padding: 20px 0px;">
+                        
+                            <img src="@Url.Content("~/Assets/Manager/")images/link_rapido_pedidos.png" class="img-responsive" alt="">
+                        
+                        <div style="background-color: #4cb1cf;color: #fff;font-size: 15px;padding: 10px;margin: 15px 0px;">
+                            PEDIDOS
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div style="width: 140px;height: 190px;float: left;margin: 0px 25px;">
+            <a href="@Url.Action("GerenciarProdutos", "Manager")">
+                <div style="border: solid 0px #fff;width: 100%;height: 100%; background-color:#fff;">
+                    <div style="text-align: center;padding: 20px 0px;">
+                        
+                            <img src="@Url.Content("~/Assets/Manager/")images/link_rapido_produtos.png" class="img-responsive" alt="">
+                        
+                        <div style="background-color: #4cb1cf;color: #fff;font-size:15px;padding: 10px;margin: 15px 0px;">
+                                PRODUTOS
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div style="width: 140px;height: 190px;float: left;margin: 0px 25px;">
+            <a href="@Url.Action("GerenciarCompradores", "Manager")">
+
+                <div style="border: solid 0px #fff;width: 100%;height: 100%; background-color:#fff;">
+                    <div style="text-align: center;padding: 20px 0px;">
+                        
+                            <img src="@Url.Content("~/Assets/Manager/")images/link_rapido_compradores.png" class="img-responsive" alt="">
+                        
+                        <div style="background-color: #4cb1cf;color: #fff;font-size: 15px;padding: 10px;margin: 15px 0px;">
+                                COMPRADORES
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+       
+    </div>
+</div>
