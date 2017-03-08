@@ -1,0 +1,68 @@
+﻿@model eStore.ModelView.ModelCarrinho
+
+@{
+    ViewBag.Title = "Carrinho";
+    Layout = "~/Views/Shared/LayoutLoja.cshtml";
+}
+
+<div class="container">
+    <div class="check">
+        <div class="col-md-3 cart-total">
+            <a class="continue" href="@Url.Action("Index","Home")">Continuar Comprando</a>
+            <div class="price-details">
+                <h3>Detalhes Pagamento</h3>
+                <span>Total</span>
+                <span class="total1">R$ @Html.DisplayFor(model => Model.preco_carrinho)</span>
+                <span>Preço Frete</span>
+                <span class="total1">R$ 150.00</span>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="total_price">
+                <li class="last_price"> <h4>TOTAL</h4></li>
+                <li class="last_price"><span>R$ @Html.DisplayFor(model => Model.preco_carrinho)</span></li>
+                <div class="clearfix"> </div>
+            </ul>
+
+            
+            <div class="clearfix"></div>
+            <a class="order" href="@Url.Action("EfetuarPagamento", "Pagamento")">Fechar Compra</a>
+           
+        </div>
+        <div class="col-md-9 cart-items">
+            <h1>Meu Carrinho (@Html.DisplayFor(model => Model.total_produtos))</h1>
+            <script>
+                    $(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$('.cart-header').remove();
+						});
+						});
+					});
+            </script>
+            @foreach (var item in Model.lista_produtos)
+            {
+                if(!item.bloqueado)
+                {
+                    <div class="cart-header">
+                        <div class="close1"> </div>
+                        <div class="cart-sec simpleCart_shelfItem">
+                            <div class="cart-item cyc">
+                                <img src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="cart-item-info">
+                                <h3><a href="@Url.Action("ExibirProduto", "Home", new { id = item.id })">@Html.DisplayFor(modelItem => item.nome)</a><span>código: @Html.DisplayFor(modelItem => item.codigo)</span></h3>
+                                <ul class="qty">
+                                    <li><p>Quantidade : 1</p></li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                }
+            }
+      </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+

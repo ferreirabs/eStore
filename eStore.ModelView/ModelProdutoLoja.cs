@@ -9,10 +9,12 @@ namespace eStore.ModelView
     public class ModelProdutoLoja
     {
         public Produto produto { get; set; }
+        public IEnumerable<Categoria> categorias { get; set; }
 
         public ModelProdutoLoja() 
         {
             produto = new Produto();
+            categorias = new List<Categoria>();
         }
 
     }

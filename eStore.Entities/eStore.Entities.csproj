@@ -77,6 +77,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrinho.cs" />
+    <Compile Include="CarrinhoDAO.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaDAO.cs" />
     <Compile Include="Comprador.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Context\eStoreContext.cs" />
     <Compile Include="Frete.cs" />
     <Compile Include="FreteDAO.cs" />
+    <Compile Include="ICarrinhoDAO.cs" />
     <Compile Include="ICategoriaDAO.cs" />
     <Compile Include="ICompradorDAO.cs" />
     <Compile Include="IFreteDAO.cs" />

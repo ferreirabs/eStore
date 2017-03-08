@@ -23,6 +23,12 @@ namespace eStore.ModelView
         public int Ordem { get; set; }
         [Display(Name = "Bloqueado:", Description = "Status do produto.")]
         public bool Bloqueado { get; set; }
+        [Display(Name = "Estoque:", Description = "Estoque do produto.")]
+        public int Estoque { get; set; }
+        [Display(Name = "Descricao:", Description = "Descricao do produto.")]
+        public string Descricao { get; set; }
+
+        
         
         public int total_produtos { get; set; }
         
@@ -42,6 +48,8 @@ namespace eStore.ModelView
             this.Ordem      = produto.ordem;
             this.Preco      = produto.preco;
             this.Bloqueado  = produto.bloqueado;
+            this.Estoque    = produto.estoque;
+            this.Descricao  = produto.descricao;
             lista_produtos  = new PagedList<Produto>(null, 1, 1);
         }
 

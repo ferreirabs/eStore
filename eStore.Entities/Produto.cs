@@ -26,6 +26,12 @@ namespace eStore.Entities
         [Range(0, 10000000, ErrorMessage = "O valor máximo deve ser possuir até 10 digitos")]
         public decimal preco { get; set; }
 
+        [MaxLength(8000, ErrorMessage = "O número máximo de caracteres permitidos é 8000.")]
+        public string descricao { get; set; }
+
+        [Range(0, 9999999999, ErrorMessage = "O valor máximo deve ser possuir até 10 digitos")]
+        public int estoque { get; set; }
+
         public int ordem { get; set; }
         
         public bool bloqueado { get; set; }

@@ -82,10 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfig.cs" />
+    <Compile Include="Carrinho.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Comprador.cs" />
     <Compile Include="DicionarioErros.cs" />
     <Compile Include="Frete.cs" />
+    <Compile Include="ICarrinho.cs" />
     <Compile Include="ICategoria.cs" />
     <Compile Include="IComprador.cs" />
     <Compile Include="IFrete.cs" />

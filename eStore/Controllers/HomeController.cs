@@ -34,6 +34,7 @@ namespace eStore.Controllers
 
             ModelView.ModelProdutoLoja modelProdutoLoja = new ModelView.ModelProdutoLoja();
             modelProdutoLoja.produto = modelVitrine.produtos.FirstOrDefault(p => p.id == id);
+            modelProdutoLoja.categorias = bcategoria.Listar();
             return View("~/Views/Home/Produto.cshtml", modelProdutoLoja);
 
         }

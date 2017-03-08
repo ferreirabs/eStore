@@ -23,6 +23,7 @@ namespace eStore.Entities.Context
         public DbSet<Frete> Frete { get; set; }
         public DbSet<Comprador> Comprador { get; set; }
         public DbSet<Endereco> Endereco { get; set; }
+        public DbSet<Carrinho> Carrinho { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder dbModelBuilder)
         {

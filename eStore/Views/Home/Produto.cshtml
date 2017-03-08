@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/LayoutLoja.cshtml";
 }
 
+@Html.Partial("~/Views/Home/VitrineCategorias.cshtml", Model.categorias)
+
 <link rel="stylesheet" href="@Url.Content("~/Assets/Templates/GreTong/")css/etalage.css">
 <script src="@Url.Content("~/Assets/Templates/GreTong/")js/jquery.etalage.min.js"></script>
 <script>
@@ -26,7 +28,7 @@
 
 
 
-<div class="row single">
+<div class="row single" style="margin: 1.5em 0;">
     <div class="col-md-9 det">
         <div class="single_left">
             <div class="grid images_3_of_2">
@@ -62,14 +64,14 @@
                     <span class="price-new">R$ @Html.DisplayFor(model => Model.produto.preco)</span>
                 </div>
                 <div class="btn_form">
-                    <a href="checkout.html">COMPRAR</a>
+                    <a href="@Url.Action("MeuCarrinho", "Carrinho")">COMPRAR</a>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="single-bottom1">
             <h6>Descrição</h6>
-            <p class="prod-desc">@Html.DisplayFor(model => Model.produto.nome)</p>
+            <p class="prod-desc">@Html.DisplayFor(model => Model.produto.descricao)</p>
         </div>
        
     </div>

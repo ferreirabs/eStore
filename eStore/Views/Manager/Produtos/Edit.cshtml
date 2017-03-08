@@ -68,6 +68,26 @@
 
             <div class="input_cadastro">
                 <div class="label_name">
+                    @Html.DisplayNameFor(modelItem => Model.Estoque)
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Estoque, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Estoque, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    @Html.DisplayNameFor(modelItem => Model.Descricao)
+                </div>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
                     @Html.DisplayNameFor(modelItem => Model.Ordem)
                 </div>
                 <div class="col-md-10">
@@ -75,6 +95,7 @@
                     @Html.ValidationMessageFor(modelItem => Model.Ordem, "", new { @class = "text-danger" })
                 </div>
             </div>
+
 
             <div class="input_cadastro">
                 <div class="label_name">

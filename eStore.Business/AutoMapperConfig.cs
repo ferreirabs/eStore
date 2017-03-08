@@ -20,6 +20,9 @@ namespace eStore.Business
             
             Mapper.CreateMap<Entities.Comprador, ModelView.ModelComprador>()
                .ReverseMap();
+
+            Mapper.CreateMap<Entities.Carrinho, ModelView.ModelCarrinho>()
+              .ReverseMap();
         }
     }
 }

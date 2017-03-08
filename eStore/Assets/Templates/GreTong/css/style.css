@@ -108,6 +108,8 @@ body a{
 }
 .cart-item-info h3 a{
 	color:#000;
+    font-weight: bold;
+    text-decoration:none;
 }
 .cart-item-info h3 span{
 	display:block;
@@ -383,8 +385,10 @@ ul.qty li p{
   font-size: 0.85em;
   border: none;
   text-align: center;
+  text-decoration:none;
 }
 .item_add:hover{
+    text-decoration:none;
 }	
 .grid_1 img{
 	margin-bottom:1em;
@@ -895,9 +899,9 @@ ul.megamenu.skyblue {
 .arriv h3 {
   font-size: 1.5em;
   font-weight: 500;
-  color: #f9f9f9;
+  color: #808080;
   margin: 0 0 0.5em;
-  font-family: 'Playfair Display', serif;
+  font-family: Helvetica;
 }
 .arriv p {
   color: #ededed;
@@ -3588,7 +3592,12 @@ a.cpns {
 .item_add a {
   padding: 7px 10px;
   font-size: 0.8125em;
+  text-decoration:none;
 }
+.item_add a:hover {
+  text-decoration:none;
+}
+
 .box_1 {
   width: 100%;
   margin:0;
