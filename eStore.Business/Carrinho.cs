@@ -221,7 +221,7 @@ namespace eStore.Business
 
         }
 
-        public ModelCarrinho Get(int?[] codigos_produtos)
+        public ModelCarrinho Get(List<int?> codigos_produtos)
         {
             try
             {

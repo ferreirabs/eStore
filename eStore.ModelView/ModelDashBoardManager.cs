@@ -10,14 +10,14 @@ namespace eStore.ModelView
     {
         public ModelCategoria categorias { get; set; }
         public ModelProduto produtos { get; set; }
-        public ModelComprador compradores { get; set; }
+        public ModelCompradores compradores { get; set; }
         //public IEnumerable<Pedido> pedidos { get; set; }
 
         public ModelDashBoardManager() 
         {
             categorias = new ModelCategoria();
             produtos = new ModelProduto();
-            compradores = new ModelComprador();
+            compradores = new ModelCompradores();
             //pedidos      = new List<Pedido>();
         
         }

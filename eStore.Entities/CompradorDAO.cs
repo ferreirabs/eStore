@@ -52,6 +52,31 @@ namespace eStore.Entities
             }
         }
 
+        public Comprador Find(string email, string senha)
+        {
+            try
+            {
+                var comprador = db.Comprador.FirstOrDefault(c => c.email == email && c.senha == senha);
+                if (comprador.id != 0)
+                {
+                    comprador.enderecos = GetEnderecos(comprador.id);
+                }
+                else
+                {
+                    comprador = null;
+
+                }
+
+                return comprador;
+            
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
         public List<Endereco> GetEnderecos(int? id_comprador)
         {
             try
@@ -77,6 +102,22 @@ namespace eStore.Entities
             {
                 return false;
             }
+        }
+
+        public bool Criar(Comprador comprador)
+        {
+            try
+            {
+                db.Comprador.Add(comprador);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
         }
 
     }

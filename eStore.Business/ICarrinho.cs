@@ -17,6 +17,6 @@ namespace eStore.Business
         IEnumerable<Entities.Carrinho> Listar();
         ModelCarrinho Listar(int page, int pageSize);
         ModelCarrinho ListarPorFiltro(string valor, string tipo);
-        ModelCarrinho Get(int?[] codigos_produtos);
+        ModelCarrinho Get(List<int?> codigos_produtos);
     }
 }

@@ -14,5 +14,7 @@ namespace eStore.Entities
         bool Remover(Comprador Comprador);
         bool Editar(Comprador Comprador, int state);*/
         bool Salvar(Comprador Comprador);
+        Comprador Find(string email, string senha);
+        bool Criar(Comprador comprador);
     }
 }

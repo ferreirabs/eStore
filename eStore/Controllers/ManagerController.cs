@@ -102,7 +102,7 @@ namespace eStore.Controllers
                 {
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
-                ModelView.ModelComprador comprador = bcomprador.Find(id);
+                ModelView.ModelCompradores comprador = bcomprador.Find(id);
                 if (comprador == null)
                 {
                     return HttpNotFound();
@@ -112,7 +112,7 @@ namespace eStore.Controllers
                         
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public ActionResult EditComprador(ModelView.ModelComprador model_comprador)
+            public ActionResult EditComprador(ModelView.ModelCompradores model_comprador)
             {
                 if (ModelState.IsValid)
                 {

@@ -1,0 +1,24 @@
+﻿@if (Session["ids_produtos_carrinho"] == null)
+{
+<div class="cart box_1">
+    <a href="checkout.html">
+        <h3> <span class="">R$0,00</span> 
+        0 items<img src="@Url.Content("~/Assets/Templates/GreTong/")images/bag.png" alt=""></h3>
+    </a>
+    <p><a href="@Url.Action("MeuCarrinho","Carrinho")" class="simpleCart_empty">(carrinho vazio)</a></p>
+    <div class="clearfix"> </div>
+</div>
+}
+else
+{
+ <div class="cart box_1">
+       <a href="@Url.Action("MeuCarrinho", "Carrinho")">
+        <h3>
+            <img src="@Url.Content("~/Assets/Templates/GreTong/")images/bag.png" alt="">
+        </h3>
+    </a>
+</div>
+}
+<div class="create_btn">
+    <a href="@Url.Action("EfetuarPagamento", "Pagamento")">FECHAR COMPRA</a>
+</div>

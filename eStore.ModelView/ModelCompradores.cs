@@ -8,7 +8,7 @@ using System.Web;
 
 namespace eStore.ModelView
 {
-    public class ModelComprador
+    public class ModelCompradores
     {
 
         public int Id { get; set; }
@@ -48,7 +48,7 @@ namespace eStore.ModelView
         public PagedList<Comprador> lista_compradores { get; set; }
         public int total_compradores { get; set; }
 
-        public ModelComprador() {
+        public ModelCompradores() {
             lista_compradores = new PagedList<Comprador>(null,1,1);
             Tipo = new TipoPessoa();
             Enderecos = new List<Endereco>();
@@ -57,7 +57,7 @@ namespace eStore.ModelView
             Nascimento = new DateTime();
         }
 
-        public ModelComprador(Comprador comprador)
+        public ModelCompradores(Comprador comprador)
         {
             Id = comprador.id;
             Codigo = comprador.codigo;

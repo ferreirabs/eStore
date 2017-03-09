@@ -30,14 +30,81 @@ namespace eStore.Controllers
             return View("~/Views/Manager/Produtos/List.cshtml", lprodutos);
         }
 
-        [HttpGet]
-        public ActionResult MeuCarrinho()
+        
+        public ActionResult MeuCarrinho(int id_produto = 0)
         {
-            int?[] ids_produtos = new int?[]{1,2,3};
+            List<int?> produtos_carrinho = new List<int?>();
+            
+            
+            produtos_carrinho.Add(id_produto);
+            
+
+            if (System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] == null)
+            {
+                if (id_produto != 0)
+                {
+                    System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] = produtos_carrinho;
+                }
+            }
+            else
+            {
+
+                produtos_carrinho = System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] as List<int?>;
+
+                if (!produtos_carrinho.Contains(id_produto))
+                {
+                    produtos_carrinho.Add(id_produto);
+                }
+
+
+                System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] = produtos_carrinho;
+
+            }
+            
+
             ModelView.ModelCarrinho carrinho = new ModelView.ModelCarrinho();
-            carrinho = bcarrinho.Get(ids_produtos);
+            carrinho = bcarrinho.Get(produtos_carrinho);
             return View("~/Views/Home/Carrinho.cshtml", carrinho);
         }
+
+        public ActionResult RemoverItem(int id_produto = 0)
+        {
+            List<int?> produtos_carrinho = new List<int?>();
+            produtos_carrinho.Add(id_produto);
+            if (System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] != null)
+            {
+                produtos_carrinho = System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] as List<int?>;
+                if (produtos_carrinho.Contains(id_produto)){
+                    produtos_carrinho.Remove(id_produto);
+                }
+
+                if(!produtos_carrinho.Any())
+                    System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] = null;
+                else
+                    System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] = produtos_carrinho;
+            
+            }
+            
+            ModelView.ModelCarrinho carrinho = new ModelView.ModelCarrinho();
+            carrinho = bcarrinho.Get(produtos_carrinho);
+            return View("~/Views/Home/Carrinho.cshtml", carrinho);
+        }
+
+        public ActionResult LimparCarrinho(int id_produto = 0)
+        {
+            List<int?> produtos_carrinho = new List<int?>();
+            produtos_carrinho.Add(id_produto);
+            if (System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] != null)
+            {
+                System.Web.HttpContext.Current.Session["ids_produtos_carrinho"] = null;
+            }
+            
+            ModelView.ModelCarrinho carrinho = new ModelView.ModelCarrinho();
+            carrinho = bcarrinho.Get(produtos_carrinho);
+            return View("~/Views/Home/Carrinho.cshtml", carrinho);
+        }
+
+        
         
     }
 }

@@ -14,11 +14,13 @@ namespace eStore.Business
         bool Remover(int id);
         bool Editar(Entities.Comprador comprador, int state);
         bool Editar(ModelView.ModelComprador comprador);*/
-        ModelComprador Find(int? id);
+        ModelCompradores Find(int? id);
         //IEnumerable<Entities.Comprador> Listar();
-        ModelComprador Listar(int page, int pageSize);
-        ModelComprador ListarPorFiltro(string valor, string tipo);
+        ModelCompradores Listar(int page, int pageSize);
+        ModelCompradores ListarPorFiltro(string valor, string tipo);
         //List<Endereco> GetEnderecos(int id_comprador);
-        bool Editar(ModelView.ModelComprador comprador);
+        bool Editar(ModelView.ModelCompradores comprador);
+        bool Criar(Entities.Comprador comprador);
+        Entities.Comprador Builder(string nome, string sobrenome, string email, string sexo, string senha, string conf_senha);
     }
 }

@@ -18,7 +18,7 @@ namespace eStore.Business
             Mapper.CreateMap<Entities.Produto, ModelView.ModelProduto>()
                .ReverseMap();
             
-            Mapper.CreateMap<Entities.Comprador, ModelView.ModelComprador>()
+            Mapper.CreateMap<Entities.Comprador, ModelView.ModelCompradores>()
                .ReverseMap();
 
             Mapper.CreateMap<Entities.Carrinho, ModelView.ModelCarrinho>()

@@ -26,25 +26,20 @@
             
             <div class="clearfix"></div>
             <a class="order" href="@Url.Action("EfetuarPagamento", "Pagamento")">Fechar Compra</a>
-           
+            <br/><br/>
+            
+            @if (Session["ids_produtos_carrinho"] != null) { 
+                <a class="order" href="@Url.Action("LimparCarrinho", "Carrinho")">Limpar Carrinho</a>
+            }
         </div>
         <div class="col-md-9 cart-items">
             <h1>Meu Carrinho (@Html.DisplayFor(model => Model.total_produtos))</h1>
-            <script>
-                    $(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});
-					});
-            </script>
             @foreach (var item in Model.lista_produtos)
             {
                 if(!item.bloqueado)
                 {
                     <div class="cart-header">
-                        <div class="close1"> </div>
+                        <a href="@Url.Action("RemoverItem", "Carrinho", new { id_produto = item.id })"><div class="close1"></div></a>
                         <div class="cart-sec simpleCart_shelfItem">
                             <div class="cart-item cyc">
                                 <img src="@Url.Content("~/Assets/Templates/GreTong/")images/image_not_found.jpg" class="img-responsive" alt="">
@@ -56,7 +51,6 @@
                                 </ul>
                             </div>
                             <div class="clearfix"></div>
-
                         </div>
                     </div>
                 }

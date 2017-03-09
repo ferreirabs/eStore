@@ -325,7 +325,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\LayoutLoja.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Cadastro\MeuCadastro.cshtml" />
+    <Content Include="Views\Cadastro\MinhaConta.cshtml" />
     <Content Include="Views\Carrinho\Index.cshtml" />
     <Content Include="Views\Shared\LayoutManager.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
@@ -352,6 +352,7 @@
     <Content Include="Views\Home\Carrinho.cshtml" />
     <Content Include="Views\Home\Pagamento.cshtml" />
     <Content Include="Views\Home\Pedido.cshtml" />
+    <Content Include="Views\Home\MiniCarrinho.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

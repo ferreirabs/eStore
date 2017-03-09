@@ -64,7 +64,7 @@
                     <span class="price-new">R$ @Html.DisplayFor(model => Model.produto.preco)</span>
                 </div>
                 <div class="btn_form">
-                    <a href="@Url.Action("MeuCarrinho", "Carrinho")">COMPRAR</a>
+                    <a href="@Url.Action("MeuCarrinho", "Carrinho", new { id_produto = Model.produto.id })">COMPRAR</a>
                 </div>
             </div>
             <div class="clearfix"></div>

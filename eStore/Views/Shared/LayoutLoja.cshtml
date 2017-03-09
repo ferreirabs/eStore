@@ -63,45 +63,64 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- start header_right -->
                     <div class="header_right">
                         <div class="rgt-bottom">
-                            <div class="log">
-                                <div class="login">
-                                    <div id="loginContainer">
-                                        <a href="#" id="loginButton"><span>Login</span></a>
-                                        <div id="loginBox">
-                                            <form id="loginForm">
-                                                <fieldset id="body">
-                                                    <fieldset>
-                                                        <label for="email">Email</label>
-                                                        <input type="text" name="email" id="email">
+                            @if (Session["nome_comprador"] == null)
+                            {
+                                <div class="log">
+                                    <div class="login">
+
+                                        <div id="loginContainer">
+                                            <a href="#" id="loginButton"><span>Login</span></a>
+
+                                            <div id="loginBox">
+
+                                                <div id="loginForm">
+                                                    <fieldset id="body">
+                                                        @using (Html.BeginForm("Login", "Cadastro", FormMethod.Post))
+                                                        {
+                                                            <fieldset>
+                                                                <label for="email">Email</label>
+                                                                <input type="text" name="email" id="email">
+                                                            </fieldset>
+                                                            <fieldset>
+                                                                <label for="senha">Senha</label>
+                                                                <input type="password" name="senha" id="password">
+                                                            </fieldset>
+                                                            <input type="submit" id="login" value="Login">
+                                                            <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Lembrar</i></label>
+                                                        }
                                                     </fieldset>
-                                                    <fieldset>
-                                                        <label for="password">Senha</label>
-                                                        <input type="password" name="password" id="password">
-                                                    </fieldset>
-                                                    <input type="submit" id="login" value="Login">
-                                                    <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Lembrar</i></label>
-                                                </fieldset>
-                                                <span><a href="#">Esqueceu a Senha?</a></span>
-                                            </form>
+                                                    <span><a href="#">Esqueceu a Senha?</a></span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                                <div class="reg">
+                                    <a href="@Url.Action("MinhaConta","Cadastro")">Cadastro</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="log">
+                                    <div class="login">
+                                        <div id="loginContainer">
+                                            Bem Vindo <span style="color:#10c3f4">@Session["nome_comprador"].ToString()</span>
+                                            <p style="font-size:14px"><a style="color:#999"href="@Url.Action("Logout", "Cadastro")" class="simpleCart_empty">sair</a></p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="reg">
-                                <a href="@Url.Action("MeuCadastro","Cadastro")">Cadastro</a>
-                            </div>
-                            <div class="cart box_1">
-                                <a href="checkout.html">
-                                    <h3> <span class="simpleCart_total">R$0,00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> itens)<img src="@Url.Content("~/Assets/Templates/GreTong/")images/bag.png" alt=""></h3>
-                                </a>
-                                <p><a href="@Url.Action("Index","Carrinho")" class="simpleCart_empty">(carrinho vazio)</a></p>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="create_btn">
-                                <a href="checkout.html">FECHAR COMPRA</a>
-                            </div>
+                            }
+
+                            @Html.Partial("~/Views/Home/MiniCarrinho.cshtml")
+
                             <div class="clearfix"> </div>
                         </div>
+
                         <div class="search">
                             <form>
                                 <input type="text" value="" placeholder="buscar...">
@@ -177,8 +196,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-2 myac">
                 <h4>MINHA CONTA</h4>
-                <li><a href="register.html">Cadastrar</a></li>
-                <li><a href="#">Meu Carrinho</a></li>
+                <li><a href="@Url.Action("MinhaConta","Cadastro")">Cadastrar</a></li>
+                <li><a href="@Url.Action("MeuCarrinho", "Carrinho")">Meu Carrinho</a></li>
             </div>
             <div class="col-md-5 our-st">
                 <div class="our-left">

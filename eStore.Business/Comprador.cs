@@ -17,11 +17,11 @@ namespace eStore.Business
             AutoMapperConfig.ConfigMappings();
         }
 
-        public ModelComprador Listar(int page, int pageSize)
+        public ModelCompradores Listar(int page, int pageSize)
         {
             try
             {
-                ModelComprador modelComprador = new ModelComprador();
+                ModelCompradores modelComprador = new ModelCompradores();
                 CompradorDAO CompradorDAO = new CompradorDAO();
                 var LCompradores = CompradorDAO.Listar();
                 modelComprador.lista_compradores = new PagedList<Entities.Comprador>(LCompradores, page, pageSize);
@@ -39,11 +39,11 @@ namespace eStore.Business
 
         }
 
-        public ModelComprador ListarPorFiltro(string valor, string tipo)
+        public ModelCompradores ListarPorFiltro(string valor, string tipo)
         {
             try
             {
-                ModelComprador modelComprador = new ModelComprador();
+                ModelCompradores modelComprador = new ModelCompradores();
                 CompradorDAO CompradorDAO = new CompradorDAO();
                 var LCompradores = ListarPorTipo(valor, tipo, CompradorDAO);
                 modelComprador.lista_compradores = new PagedList<Entities.Comprador>(LCompradores, 1, 10);
@@ -78,7 +78,7 @@ namespace eStore.Business
             }
         }
 
-        public ModelComprador Find(int? id)
+        public ModelCompradores Find(int? id)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace eStore.Business
                 var comprador = CompradorDAO.Find(id);
                 List<Entities.Comprador> lcomprador = new List<Entities.Comprador>();
                 lcomprador.Add(comprador);
-                ModelComprador modelComprador = new ModelComprador(lcomprador.FirstOrDefault());
+                ModelCompradores modelComprador = new ModelCompradores(lcomprador.FirstOrDefault());
                 modelComprador.lista_compradores = new PagedList<Entities.Comprador>(lcomprador, 1, 10);
                 modelComprador.total_compradores = modelComprador.lista_compradores.Count();
                 return modelComprador;
@@ -101,7 +101,7 @@ namespace eStore.Business
 
         }
 
-        public bool Editar(ModelView.ModelComprador comprador)
+        public bool Editar(ModelView.ModelCompradores comprador)
         {
             try
             {
@@ -117,6 +117,53 @@ namespace eStore.Business
 
                 throw new NotImplementedException();
                 return false;
+            }
+        }
+
+        public Entities.Comprador Logar(string email, string senha) 
+        {
+            CompradorDAO c = new CompradorDAO();
+            var _comprador = c.Find(email, senha);
+            return _comprador;
+        
+        }
+
+        public bool Criar(Entities.Comprador comprador)
+        {
+            try
+            {
+                CompradorDAO c = new CompradorDAO();
+                if(c.ListarPorEmail(comprador.email).FirstOrDefault(e => e.email == comprador.email) == null)
+                    return c.Criar(comprador);
+
+                return false;
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return false;
+            }
+
+        }
+
+        public Entities.Comprador Builder(string nome, string sobrenome, string email, string sexo, string senha, string conf_senha) 
+        {
+            try
+            {
+                Entities.Comprador _comprador = new Entities.Comprador();
+                _comprador.nome = nome + " " + sobrenome;
+                _comprador.email = email;
+                _comprador.senha = senha;
+                _comprador.nascimento = new DateTime(1990, 03, 21);
+                _comprador.data_cadastro = DateTime.Now;
+                _comprador.bloqueado = false;
+                return _comprador;
+            }
+            catch (Exception)
+            {
+               
+                return null;
             }
         }
 
