@@ -233,8 +233,10 @@ ul.total_price{
   list-style: none;
 }
 ul.total_price li.last_price{
-	width: 50%;
-  float: left;
+    width: 50%;
+    float: left;
+    font-weight: bold;
+    color: #000;
   
 }
 ul.total_price li.last_price span{

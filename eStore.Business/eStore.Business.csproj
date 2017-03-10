@@ -91,7 +91,9 @@
     <Compile Include="ICategoria.cs" />
     <Compile Include="IComprador.cs" />
     <Compile Include="IFrete.cs" />
+    <Compile Include="IPedido.cs" />
     <Compile Include="IProduto.cs" />
+    <Compile Include="Pedido.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

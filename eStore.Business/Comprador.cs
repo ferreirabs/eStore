@@ -101,6 +101,24 @@ namespace eStore.Business
 
         }
 
+        public Entities.Comprador Get(int? id)
+        {
+            try
+            {
+                CompradorDAO CompradorDAO = new CompradorDAO();
+                var comprador = CompradorDAO.Find(id);
+                return comprador;
+
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return null;
+            }
+
+        }
+
         public bool Editar(ModelView.ModelCompradores comprador)
         {
             try

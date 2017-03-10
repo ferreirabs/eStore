@@ -240,6 +240,7 @@ namespace eStore.Business
                 modelcarrinho.lista_produtos = lprodutos_carrinhos;
                 modelcarrinho.preco_carrinho = GetTotalPrecoProdutos(modelcarrinho.lista_produtos);
                 modelcarrinho.total_produtos = modelcarrinho.lista_produtos.Count();
+                modelcarrinho.total = modelcarrinho.GetTotalCarrinho();
 
                 return modelcarrinho;
 

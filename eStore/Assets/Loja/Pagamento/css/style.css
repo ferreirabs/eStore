@@ -109,16 +109,16 @@ body {
 }
 
 .checkout {
- width: 310px;
-    margin: 10px auto;
-    
+    width: 310px;
+    margin: 0px auto;
+    height: 185px;
     background: #f3f6fa;
-    /*border: 1px solid;*/
+    /* border: 1px solid; */
     border-color: #c2cadb #bbc5d6 #b7c0cd;
     border-radius: 7px;
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-        padding: 45px 15px;
+    padding: 10px 15px;
 }
 .checkout > p {
   zoom: 1;
@@ -243,21 +243,23 @@ input {
 }
 
 .checkout-name {
-  width: 150px;
+  width: 100%;
 }
 
 .checkout-card {
-  width: 210px;
+    width: 205px;
+    margin-right: 15px;
 }
 
 .checkout-exp,
 .checkout-cvc {
-  margin-left: 15px;
-  width: 45px;
+    /* margin-left: 15px; */
+    width: 45px;
+    margin-right: 13px;
 }
 
 .checkout-btn {
-  display: inline-block;
+    display: inline-block;
     cursor: pointer;
     border: none;
     text-align: center;
@@ -266,12 +268,12 @@ input {
     min-width: 100px;
     height: 40px;
     line-height: 40px;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     padding: 0 10px;
     letter-spacing: .05em;
     color: #fff;
-    background-color: #009f3c;
+    background-color: #1185b9;
     margin: 30px 0px 5px 0px;
 }
 .checkout-btn:active {
@@ -305,4 +307,11 @@ input {
 ::-moz-focus-inner {
   padding: 0 !important;
   border: 0 !important;
+}
+
+.img-payment-product-details{
+
+    width:50px;
+    height:50px;
+
 }

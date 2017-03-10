@@ -81,6 +81,7 @@
     <Compile Include="ModelCategoria.cs" />
     <Compile Include="ModelCompradores.cs" />
     <Compile Include="ModelDashBoardManager.cs" />
+    <Compile Include="ModelPagamento.cs" />
     <Compile Include="ModelPedidoLoja.cs" />
     <Compile Include="ModelPedidoManager.cs" />
     <Compile Include="ModelProduto.cs" />

@@ -11,7 +11,6 @@ namespace eStore.Business
 
         public static void ConfigMappings()
         {
-
             Mapper.CreateMap<Entities.Categoria, ModelView.ModelCategoria>()
                .ReverseMap();
 
@@ -22,6 +21,9 @@ namespace eStore.Business
                .ReverseMap();
 
             Mapper.CreateMap<Entities.Carrinho, ModelView.ModelCarrinho>()
+              .ReverseMap();
+
+            Mapper.CreateMap<Entities.Pedido, ModelView.ModelPedidoLoja>()
               .ReverseMap();
         }
     }

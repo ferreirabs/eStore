@@ -1,13 +1,12 @@
 ﻿using eStore.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace eStore.ModelView
 {
-    public class ModelCarrinho
+    public class ModelPagamento
     {
         public int Id { get; set; }
 
@@ -23,25 +22,25 @@ namespace eStore.ModelView
 
         public IEnumerable<Produto> lista_produtos { get; set; }
 
-        public ModelCarrinho() {
+        public string cc_name { get; set; }
+        public string cc_emissor { get; set; }
+        public string cc_mes  { get; set; }
+        public string cc_ano  { get; set; }
+        public string cc_number  { get; set; }
+        public string cc_cvc { get; set; }
+        
+        public ModelPagamento() {
             lista_produtos = new List<Produto>();
         }
 
-        public ModelCarrinho(Carrinho carrinho)
+        public ModelPagamento(Carrinho carrinho)
         {
             this.Id = carrinho.id;
             this.Codigo = carrinho.codigo;
             this.preco_carrinho = 0;
             this.total_produtos = 0;
-            this.total_frete = 15.50M;
-            this.total = GetTotalCarrinho();
+            this.total_frete = 0;
             lista_produtos  = new List<Produto>();
         }
-
-        public decimal GetTotalCarrinho(){
-
-            return this.total_frete + this.preco_carrinho;
-        }
-
     }
 }

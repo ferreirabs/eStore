@@ -179,9 +179,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703060305222_Initial.cs" />
-    <Compile Include="Migrations\201703060305222_Initial.Designer.cs">
-      <DependentUpon>201703060305222_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201703100338088_Initial.cs" />
+    <Compile Include="Migrations\201703100338088_Initial.Designer.cs">
+      <DependentUpon>201703100338088_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ModelCategoria.cs" />
@@ -353,6 +353,8 @@
     <Content Include="Views\Home\Pagamento.cshtml" />
     <Content Include="Views\Home\Pedido.cshtml" />
     <Content Include="Views\Home\MiniCarrinho.cshtml" />
+    <Content Include="Views\Cadastro\MeusPedidos.cshtml" />
+    <Content Include="Views\Manager\Pedidos\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -385,8 +387,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703060305222_Initial.resx">
-      <DependentUpon>201703060305222_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703100338088_Initial.resx">
+      <DependentUpon>201703100338088_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,6 +22,7 @@ namespace eStore.Controllers
         private eStore.Business.Produto bproduto = new eStore.Business.Produto();
         private eStore.Business.Categoria bcategoria = new eStore.Business.Categoria();
         private eStore.Business.Comprador bcomprador = new eStore.Business.Comprador();
+        private eStore.Business.Pedido bpedido = new eStore.Business.Pedido();
         //private eStoreContext db = new eStoreContext();
 
         #region login
@@ -32,7 +33,7 @@ namespace eStore.Controllers
             dashboard.categorias = bcategoria.Listar(1, 10);
             dashboard.produtos = bproduto.Listar(1,10);
             dashboard.compradores = bcomprador.Listar(1,10);
-            
+            dashboard.pedidos = bpedido.Listar(1, 10);
             if (true)
             {
                 return View(dashboard);
@@ -128,8 +129,42 @@ namespace eStore.Controllers
 
         #endregion compradores
 
+        #region pedidos
+            [HttpPost]
+            public ActionResult ListarPedidosPorFiltro(string filtro_valor, string filtro_tipo)
+            {
+                var lpedidos = bpedido.ListarPorFiltro(filtro_valor, filtro_tipo);
+                return View("~/Views/Manager/Pedidos/List.cshtml", lpedidos);
+            }
+
+            [HttpGet]
+            public ActionResult GerenciarPedidos(int page = 1, int pageSize = 10)
+            {
+                var lpedidos = bpedido.Listar(page, pageSize);
+                return View("~/Views/Manager/Pedidos/List.cshtml", lpedidos);
+            }
+
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public ActionResult EditPedido(ModelView.ModelPedidoManager model_pedido)
+            {
+                if (ModelState.IsValid)
+                {
+                    /*if (!bpedido.Editar(model_pedido))
+                    {
+                        ModelState.AddModelError("CustomError", bproduto.msgErro.Get("EXECUTAR_ACAO"));
+                        return View("~/Views/Manager/Compradores/Edit.cshtml", model_pedido);
+                    }*/
+                }
+                return RedirectToAction("GerenciarPedidos");
+
+            }    
+
+        #endregion
+
+
         #region produtos
-        [HttpPost]
+            [HttpPost]
         public ActionResult ListarProdutoPorFiltro(string filtro_valor, string filtro_tipo)
         {
             var lprodutos = bproduto.ListarPorFiltro(filtro_valor, filtro_tipo);
@@ -150,7 +185,7 @@ namespace eStore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CriarProduto([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado")] ModelView.ModelProduto produto)
+        public ActionResult CriarProduto([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado,descricao")] ModelView.ModelProduto produto)
         {
             if (ModelState.IsValid)
             {
@@ -206,7 +241,7 @@ namespace eStore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditProduto([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado")] ModelView.ModelProduto model_produto)
+        public ActionResult EditProduto([Bind(Include = "id,codigo,nome,preco,ordem,bloqueado,descricao")] ModelView.ModelProduto model_produto)
         {
             if (ModelState.IsValid)
             {

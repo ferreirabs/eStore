@@ -10,11 +10,12 @@ namespace eStore.Entities
         int Quantidade();
         int QuantidadePorStatus(int status);
         int QuantidadePorComprador(Comprador comprador);
-        List<Pedido> Listar();
+        //List<Pedido> Listar();
         List<Pedido> ListarPorStatus(int status);
-        List<Pedido> ListarPorComprador(Comprador comprador);
-        bool Criar(Pedido pedido);
+        IEnumerable<Pedido> ListarPorComprador(int id);
         bool Editar(Pedido pedido, int state);
         bool Remover(Pedido pedido);
+        IEnumerable<Pedido> Listar();
+        bool Criar(Pedido pedido);
     }
 }

@@ -1,0 +1,48 @@
+﻿@model eStore.ModelView.ModelPedidoLoja
+
+@{
+    ViewBag.Title = "MeusPedidos";
+    Layout = "~/Views/Shared/LayoutLoja.cshtml";
+}
+
+@if (Session["nome_comprador"] != null)
+{
+    <div class="registration">
+        <div class="registration_left">
+            <h2>Meus Pedidos</h2>
+            <!-- [if IE]
+            < link rel='stylesheet' type='text/css' href='ie.css'/>
+             [endif] -->
+            <!-- [if lt IE 7]>
+                < link rel='stylesheet' type='text/css' href='ie6.css'/>
+            <! [endif] -->
+            
+            <div style="background-color: #fafbfd;height: 550px;width: 574px;">
+
+                <div style="margin: 5px 0px;padding:0px 10px;">
+                    <div style="width: 500px;height: 350px;float: left;margin: 45px 25px;">
+                        <div class="container_busca_titulo" style="    text-align: center;background-color: #1185b9;color: #fff;width: 100%;height: 50px;font-size: 20px;margin: 10px 0px;padding: 15px;">
+                            <strong>Pedido Efetuado Com Sucesso :)</strong>
+                        </div>
+                        <div style="border-bottom: solid 8px #4cb1cf;width: 100%;height: 100%;background-color: #fff;">
+                            <div style="text-align: center;">
+                                <div>
+                                    Número do Pedido:
+                                    <strong># @Html.DisplayFor(model => Model.Id)</strong>
+                                </div>
+                                <br/>
+                                Um email foi enviado para <strong>@Html.DisplayFor(model => Model.comprador.email)</strong> com instruções detalhadas a respeito do envio.
+                                <div style="margin-top: 65px;">
+                                    <img src="@Url.Content("~/Assets/Loja/images/")confirmado.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}

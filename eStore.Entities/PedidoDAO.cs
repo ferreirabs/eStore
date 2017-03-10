@@ -18,6 +18,17 @@ namespace eStore.Entities
     {
         eStoreContext db = new eStoreContext();
 
+        public IEnumerable<Pedido> Listar()
+        {
+            return db.Pedido.ToList();
+        }
+        
+        public IEnumerable<Pedido> ListarPorComprador(int _id_comprador)
+        {
+            return db.Pedido.Where(p => p.id_comprador == _id_comprador).ToList();
+        }
+        
+
         public int Quantidade()
         {
             int total = 0;
@@ -41,7 +52,7 @@ namespace eStore.Entities
         {
             try
             {
-                return (from p in db.Pedido where p.comprador == comprador select p).Count();
+                return 1;//(from p in db.Pedido where p.comprador == comprador select p).Count();
             }
             catch (Exception)
             {
@@ -49,10 +60,10 @@ namespace eStore.Entities
             }
         }
 
-        public List<Pedido> Listar()
+        /*public List<Pedido> Listar()
         {
             return db.Pedido.ToList<Pedido>();
-        }
+        }*/
 
         public List<Pedido> ListarPorStatus(int status)
         {
@@ -60,11 +71,11 @@ namespace eStore.Entities
             return query.ToList<Pedido>();
         }
 
-        public List<Pedido> ListarPorComprador(Comprador comprador)
+        /*public List<Pedido> ListarPorComprador(Comprador comprador)
         {
             var query = from p in db.Pedido where p.comprador == comprador select p;
             return query.ToList<Pedido>();
-        }
+        }*/
 
         public bool Criar(Pedido pedido)
         {
@@ -110,8 +121,9 @@ namespace eStore.Entities
 
                 return false;
             }
-
-
         }
+
+        
+    
     }
 }

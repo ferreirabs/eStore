@@ -23,8 +23,11 @@ namespace eStore.Controllers
         {
             //Criar Sessão
             var comprador = bcomprador.Logar(email, senha);
-            if(comprador != null)
+            if (comprador != null)
+            {
                 System.Web.HttpContext.Current.Session["nome_comprador"] = comprador.nome;
+                System.Web.HttpContext.Current.Session["id_comprador"] = comprador.id;
+            }
 
             ModelView.ModelVitrine modelVitrine = new ModelView.ModelVitrine();
             modelVitrine.categorias = bcategoria.Listar();
@@ -38,6 +41,7 @@ namespace eStore.Controllers
         {
             
             System.Web.HttpContext.Current.Session["nome_comprador"] = null;
+            System.Web.HttpContext.Current.Session["id_comprador"] = null;
 
             ModelView.ModelVitrine modelVitrine = new ModelView.ModelVitrine();
             modelVitrine.categorias = bcategoria.Listar();

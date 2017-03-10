@@ -22,5 +22,6 @@ namespace eStore.Business
         bool Editar(ModelView.ModelCompradores comprador);
         bool Criar(Entities.Comprador comprador);
         Entities.Comprador Builder(string nome, string sobrenome, string email, string sexo, string senha, string conf_senha);
+        Entities.Comprador Get(int? id);
     }
 }

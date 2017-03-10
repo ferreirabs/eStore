@@ -13,21 +13,27 @@ namespace eStore.Entities
         [Key]
         public int id { get; set; }
 
-        [Required(ErrorMessage = "O subtotal do pedido é obrigatório")]
-        public decimal subtotal { get; set; }
-
-        [Required(ErrorMessage = "O total do pedido é obrigatório")]
-        public decimal total { get; set; }
-
-        [Required(ErrorMessage = "A data do pedido é obrigatória")]
-        public DateTime data_pedido { get; set; }
-
-        public int status { get; set; }
-
-        public DateTime data_alteracao { get; set; }
-
-        [Required(ErrorMessage = "O código do comprador é obrigatório")]
-        public Comprador comprador { get; set; }
         
+        public decimal subtotal { get; set; }
+        public decimal total { get; set; }
+        public DateTime data_pedido { get; set; }
+        public int status { get; set; }
+        public DateTime data_alteracao { get; set; }
+        public int id_comprador { get; set; }
+        public IEnumerable<Produto> produtos { get; set;}
+        //public MetodoPagamento pagamento { get; set; }
+
     }
+
+    /*public class MetodoPagamento
+    {
+        public string cc_name { get; set; }
+        public string cc_emissor { get; set; }
+        public string cc_mes { get; set; }
+        public string cc_ano { get; set; }
+        public string cc_number { get; set; }
+        public string cc_cvc { get; set; }
+
+    }*/
+
 }
