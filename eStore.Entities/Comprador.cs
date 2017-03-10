@@ -43,7 +43,7 @@ namespace eStore.Entities
     {
         [Key]
         public int id { get; set; }
-        public int comprador_id { get; set; }
+        public int Comprador_id { get; set; }
 
         public string cep { get; set; }
         public string endereco { get; set; }

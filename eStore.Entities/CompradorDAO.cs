@@ -81,7 +81,7 @@ namespace eStore.Entities
         {
             try
             {
-                return db.Endereco.Where(e => e.comprador_id == id_comprador).ToList();
+                return db.Endereco.Where(e => e.Comprador_id == id_comprador).ToList();
             }
             catch (Exception)
             {
