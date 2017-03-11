@@ -22,12 +22,12 @@ namespace eStore.Entities
         {
             return db.Pedido.ToList();
         }
-        
+
         public IEnumerable<Pedido> ListarPorComprador(int _id_comprador)
         {
             return db.Pedido.Where(p => p.id_comprador == _id_comprador).ToList();
         }
-        
+
 
         public int Quantidade()
         {
@@ -42,7 +42,7 @@ namespace eStore.Entities
             {
                 return (from p in db.Pedido where p.status == status select p).Count();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return 0;
             }
@@ -123,7 +123,19 @@ namespace eStore.Entities
             }
         }
 
-        
-    
+        public Pedido Get(int id_pedido)
+        {
+            try
+            {
+                return db.Pedido.FirstOrDefault(c => c.id == id_pedido);
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
+
     }
 }

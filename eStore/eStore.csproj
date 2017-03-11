@@ -199,6 +199,7 @@
     <Content Include="Assets\Manager\css\PagedList.css" />
     <Content Include="Assets\Manager\css\style.css" />
     <Content Include="Assets\Manager\images\1485850070_Speedometer.png" />
+    <Content Include="Assets\Manager\images\aprovado copy.png" />
     <Content Include="Assets\Manager\images\aprovado.png" />
     <Content Include="Assets\Manager\images\aprovado_off.png" />
     <Content Include="Assets\Manager\images\carrinho_minha_loja.png" />
@@ -355,6 +356,7 @@
     <Content Include="Views\Home\MiniCarrinho.cshtml" />
     <Content Include="Views\Cadastro\MeusPedidos.cshtml" />
     <Content Include="Views\Manager\Pedidos\List.cshtml" />
+    <Content Include="Views\Manager\Pedidos\GerenciarPedido.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

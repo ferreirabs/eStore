@@ -44,9 +44,9 @@
                     <input type="submit" value="PESQUISAR POR EMAIL" class="botao_pesquisar_azul" />
                 }
             </div>
-           
+
         </div>
-       
+
     </div>
     <div class="info_cabecalho_tabelas">
 
@@ -60,31 +60,31 @@
 
 
             <thead>
-                <tr>
-                    <th scope="col" style="width:10%;">@Html.DisplayNameFor(model => model.Id)</th>
-                    <th scope="col">Comprador</th>
-                    <th scope="col" style="width:10%;">Data do Pedido</th>
-                    <th scope="col" style="width:10%;">Editar</th>
+                <tr >
+                    <th scope="col" style="width:10%; background-color:#0095d4 !important;color:#fff !important">@Html.DisplayNameFor(model => model.Id)</th>
+                    <th scope="col" style="background-color:#0095d4 !important;color:#fff !important">Comprador</th>
+                    <th scope="col" style="width:10%; background-color:#0095d4 !important;color:#fff !important">Data do Pedido</th>
+                    <th scope="col" style="width:10%; background-color:#0095d4 !important;color:#fff !important">Editar</th>
 
                 </tr>
             </thead>
             <tbody>
 
-
+                
                 @foreach (var item in Model.lista_pedidos)
                 {
-                    <tr>
-                        <td>
+                    <tr style="background-color:#cae8cd !important;">
+                        <td style="background-color:#cae8cd !important;">
                             @Html.DisplayFor(modelItem => item.id)
                         </td>
-                        <td>
+                        <td style="background-color:#cae8cd !important;">
                             @Html.DisplayFor(modelItem => item.id_comprador)
                         </td>
-                        <td>
+                        <td style="background-color:#cae8cd !important;">
                             @Html.DisplayFor(modelItem => item.data_pedido)
                         </td>
-                        <td>
-                            <a href="@Url.Action("EditPedido", "Manager", new { id = item.id })">
+                        <td style="background-color:#cae8cd !important;">
+                            <a href="@Url.Action("GerenciarPedido", "Manager", new { id_pedido = item.id })">
                                 <img src="@Url.Content("~/Assets/manager/")images/editar.png" />
                             </a>
                         </td>

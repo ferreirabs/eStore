@@ -144,6 +144,16 @@ namespace eStore.Controllers
                 return View("~/Views/Manager/Pedidos/List.cshtml", lpedidos);
             }
 
+            [HttpGet]
+            public ActionResult GerenciarPedido(int id_pedido)
+            {
+                ModelView.ModelEditPedidoManager modelpedido = new ModelView.ModelEditPedidoManager();
+                modelpedido.pedido = bpedido.Get(id_pedido);
+                modelpedido.comprador = bcomprador.Get(modelpedido.pedido.id_comprador);
+
+                return View("~/Views/Manager/Pedidos/GerenciarPedido.cshtml", modelpedido);
+            }     
+        
             [HttpPost]
             [ValidateAntiForgeryToken]
             public ActionResult EditPedido(ModelView.ModelPedidoManager model_pedido)

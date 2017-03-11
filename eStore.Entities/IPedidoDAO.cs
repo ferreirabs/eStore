@@ -17,5 +17,6 @@ namespace eStore.Entities
         bool Remover(Pedido pedido);
         IEnumerable<Pedido> Listar();
         bool Criar(Pedido pedido);
+        Pedido Get(int id_pedido);
     }
 }

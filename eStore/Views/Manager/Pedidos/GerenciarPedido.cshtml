@@ -1,0 +1,222 @@
+﻿@model eStore.ModelView.ModelEditPedidoManager
+@{
+    ViewBag.Title = "Gerenciar Pedido";
+    Layout = "~/Views/Shared/LayoutManager.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gerenciar Pedido</title>
+</head>
+<body>
+    <br />
+    <a href="@Url.Action("Index","Manager")">
+        <img src="@Url.Content("~/Assets/Manager/")images/home.png" />
+    </a>
+    <span class="manager_migalha">
+        Gerenciar Pedido
+    </span>
+
+
+    @using (Html.BeginForm("EditPedido", "Manager", FormMethod.Post, Model))
+    {
+        @Html.AntiForgeryToken()
+        <br/><br/>
+        <div class="form-horizontal">
+            <div class="manger_titulos_azul" style="background-color: #0095d4 !important; color:#fff !important">Detalhes do Pedido: #@Model.pedido.id</div>
+           
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="mensagem_erro">
+                    @Html.ValidationMessage("CustomError")
+                </div>
+            }
+            
+
+            @Html.HiddenFor(model => Model.pedido.id)
+            @Html.HiddenFor(model => Model.pedido.status)
+            @Html.HiddenFor(model => Model.pedido.total)
+            <div style="float:left; width:500px;    height: 160px;">
+                <br />
+                <div class="input_cadastro">
+                    <br />
+                    <div class="label_name">
+                        Data do Pedido: <span style="color:#002759;">@Model.pedido.data_pedido</span>
+                    </div>
+                </div>
+
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Total: <span style="color:#002759;"> R$ @Model.pedido.total</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="input_cadastro">
+                    <br />
+                    <div class="label_name">
+                        Status:
+                        
+                        <div>
+                            <br />
+                            <div style="background-color: #6ab970;color: #fff;width: 150px;float: left;padding: 10px;">
+                                Reservado
+                            </div>
+                                
+                            <div style="background-color: #6ab970;color: #fff;width: 150px;float: left;padding: 10px;">
+                                Confirmado
+                            </div>
+                                
+                            <div style="background-color: #c1c1c1;color: #fff;width: 150px;float: left;padding: 10px;">
+                                Pagamento Confirmado
+                            </div>
+                                
+                            <div style="background-color: #c1c1c1;color: #fff;width: 150px;float: left;padding: 10px;">
+                                Enviado
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+               
+            </div>
+            
+            <div class="manger_titulos_azul" style="background-color: #0095d4 !important; color:#fff !important">
+                Detalhes do Comprador
+            </div>
+            
+            <div class="input_cadastro">
+                <br />
+                <div class="label_name">
+                    Codigo Comprador: <span style="color:#002759;"># @Model.comprador.id</span>
+                </div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    Nome Comprador: <span style="color:#002759;">@Model.comprador.nome</span>
+</div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    Email: <span style="color:#002759;">@Model.comprador.email</span>
+</div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    Nascimento: <span style="color:#002759;">@Model.comprador.nascimento</span>
+</div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    RG: <span style="color:#002759;">10.346.980-7</span>
+</div>
+            </div>
+
+            <div class="input_cadastro">
+                <div class="label_name">
+                    CPF: <span style="color:#002759;">786.986.000-12</span>
+</div>
+                <br />
+            </div>
+
+            
+           
+            <div style="float:left;width:500px">
+                <div class="manger_titulos_azul" style="background-color: #0095d4 !important; color:#fff !important">
+                    Endereço de Cobrança
+                </div>
+                <div class="input_cadastro">
+                    <br />
+                    <div class="label_name">
+                        CEP: <span style="color:#002759;">80.945.435</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Rua: <span style="color:#002759;">Salgado Filho</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Numero: <span style="color:#002759;">095</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Bairro: <span style="color:#002759;">Uberaba</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Referência: <span style="color:#002759;">Apartamento 3</span>
+                    </div>
+                    <br />
+                </div>
+                
+            </div>
+            <div>
+
+                <div class="manger_titulos_azul" style="background-color: #0095d4 !important; color:#fff !important">
+                    Endereço de Entrega
+                </div>
+                <div class="input_cadastro">
+                    <br />
+                    <div class="label_name">
+                        CEP: <span style="color:#002759;">80.345.000</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Rua: <span style="color:#002759;">Imaculada Conceição</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Numero: <span style="color:#002759;">345</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Bairro: <span style="color:#002759;">Prado Velho</span>
+</div>
+                </div>
+                <div class="input_cadastro">
+                    <div class="label_name">
+                        Referência: <span style="color:#002759;">Casa</span>
+</div>
+                    <br />
+                </div>
+
+            </div>
+
+           
+            <div>
+                <!--Html.EditorForModel("Endereco.cshtml", Model.Enderecos[0]);-->
+                <!--Html.EditorFor(model => Model.status, "Manager/Pedido/EditStatus")-->
+                <!--Html.Partial("~/Views/Manager/Compradores/EditEnderecos.cshtml", Model.Enderecos[0], new ViewDataDictionary { { "id_comprador", Model.Id } })-->
+            </div>
+            <div>
+                <div style="text-align:right;">
+                    <a href="@Url.Action("GerenciarPedidos", "Manager")">
+                        <div class="botao_azul">
+                            VOLTAR
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    }
+</body>
+
+

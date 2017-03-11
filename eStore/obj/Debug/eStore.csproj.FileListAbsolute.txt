@@ -187,4 +187,3 @@ C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.Migrations.Ini
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.csproj.GenerateResource.Cache
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.dll
 C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.pdb
-C:\Users\Multivac\Documents\GitHub\eStore\eStore\obj\Debug\eStore.csprojResolveAssemblyReference.cache

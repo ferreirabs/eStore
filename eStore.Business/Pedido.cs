@@ -10,9 +10,10 @@ namespace eStore.Business
 {
     public class Pedido : IPedido
     {
-        public DicionarioErros msgErro =  new DicionarioErros();
+        public DicionarioErros msgErro = new DicionarioErros();
 
-        public Pedido() {
+        public Pedido()
+        {
             AutoMapperConfig.ConfigMappings();
         }
 
@@ -72,6 +73,24 @@ namespace eStore.Business
 
         }
 
+        public Entities.Pedido Get(int id_pedido)
+        {
+
+            try
+            {
+                PedidoDAO pedidoDAO = new PedidoDAO();
+                Entities.Pedido p = pedidoDAO.Get(id_pedido);
+                return p;
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+                return null;
+            }
+        }
+
+
         public ModelPedidoManager ListarPorFiltro(string valor, string tipo)
         {
             try
@@ -114,7 +133,7 @@ namespace eStore.Business
             {
                 PedidoDAO p = new PedidoDAO();
                 return p.Criar(pedido);
-                
+
             }
             catch (Exception)
             {

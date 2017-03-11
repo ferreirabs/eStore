@@ -16,7 +16,8 @@ namespace eStore.Business
 
         ModelPedidoManager Listar(int page, int pageSize);
         ModelPedidoManager ListarPorFiltro(string valor, string tipo);
+        Entities.Pedido Get(int id_pedido);
 
-        
+
     }
 }
